@@ -1,5 +1,5 @@
 "use client";
-import styles from '../../scss/pages/dashboard/dashboard.module.scss'
+import styles from '../../scss/pages/dashboard/dashboard.module.css'
 import Nav from './nav'
 import React,{useState , useEffect} from 'react';
 import Activities from './activities'

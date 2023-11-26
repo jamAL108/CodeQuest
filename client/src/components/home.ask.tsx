@@ -1,6 +1,6 @@
 'use client';
 import React,{useState} from 'react'
-import '../scss/components/homeask.scss'
+import '../scss/components/homeask.css'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 const  HomeAsk = () => {
   const [email,setemail] =useState("")

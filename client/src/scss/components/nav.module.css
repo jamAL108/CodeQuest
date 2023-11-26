@@ -1,0 +1,161 @@
+.Nav{
+    background-color: transparent;
+    width: 100%;
+    height: 3.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.Nav .content{
+    margin-left: 50px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.Nav .content .logo{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.Nav .content .logo{
+    user-select: none;
+}
+.Nav .content .logo img{
+    width: 30%;
+    height: 100%;
+}
+.Nav .content .logo h2{
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 550;
+}
+.Nav .content .btn{
+    height: 60%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.83rem;
+    font-weight: 430;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.Nav .content .btn:hover{
+    opacity: 0.76;
+}
+.Nav .content .btn .icon{
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+.Nav .right{
+    width:250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    align-items: center;
+}
+.Nav .right .signin{
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.Nav .right .signin:hover{
+    opacity: 0.6;
+}
+.Nav .right .signup{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 7px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.Nav .right .signup:hover{
+    opacity: 0.6;
+}
+
+
+
+
+@media screen and (max-width:700px) {
+    .Nav{
+        justify-content: space-between;
+    }
+    .Nav .right{
+        width:150px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+    }
+    .Nav .content{
+        width: 50%;
+        margin-left: 0px;
+    }
+    .Nav .content .logo{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        filter: brightness(1.1);
+    }
+    .Nav .content .logo{
+        user-select: none;
+    }
+    .Nav .content .logo img{
+        width: 30%;
+        height: 100%;
+    }
+    .Nav .content .logo h2{
+        font-weight: 590;
+    }
+    .Nav .content .btn{
+        display: none;
+    }
+    .nav .right{
+        width: 40%;
+        justify-content: space-around;
+    }
+    .ico{
+        color: white;
+        height: 90%;
+        width: 30px;
+    }
+    .ico .css-i4bv87-MuiSvgIcon-root{
+        color: white;
+    }
+
+    .Nav .show{
+        z-index: 2000 !important;
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        width: 95%;
+        height: calc(100vh - 4rem - 1.5rem);
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+}

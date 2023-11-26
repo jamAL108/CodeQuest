@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import '../../scss/pages/dashboard/dashboard.nav.scss'
+import '../../scss/pages/dashboard/dashboard.nav.css'
 
 
 const Nav = () => {

@@ -1,11 +1,20 @@
 'use client';
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import Nav from '../components/nav';
-import styles from  '../scss/pages/home.module.scss'
+import styles from  '../scss/pages/home.module.css'
 import HomeAsk from '@/components/home.ask';
 export default function Home() {
+  const [ fla,setfla] = useState<boolean>(false);
   useEffect(()=>{
    console.log("heloo")
+  },[])
+
+  useEffect(()=>{
+    if(window.innerWidth<700){
+      setfla(true)
+    }else{
+      setfla(false)
+    }
   },[])
   return (
     <div className={styles.main}>
@@ -46,10 +55,18 @@ export default function Home() {
         <h1>hello</h1>
       </div>
         <div className={styles.image}>
+       {fla===false && (
         <img 
         src='/images/homeback.png'
         alt="My Image"
       />
+      )}
+      {fla===true && (
+                <img 
+                src='/images/homeback1.png'
+                alt="My Image"
+              />
+      )}
       <div className={styles.shadow}></div>
       </div>
     </div>

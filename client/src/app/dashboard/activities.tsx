@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../scss/pages/dashboard/activities.scss'
+import '../../scss/pages/dashboard/activities.css'
 
 const Activities = () => {
   return (

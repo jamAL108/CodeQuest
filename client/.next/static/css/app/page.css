@@ -1,312 +1,391 @@
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/scss/components/nav.module.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.nav_Nav__asXJu {
-  background-color: transparent;
-  width: 100%;
-  height: 3.6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN {
-  margin-left: 50px;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC {
-  width: 30%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC img {
-  width: 30%;
-  height: 100%;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC h2 {
-  font-size: 1.4rem;
-  color: white;
-  font-weight: 550;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN .nav_btn__495Xm {
-  height: 60%;
-  background-color: transparent;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 0.83rem;
-  font-weight: 430;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: 0.4s ease;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN .nav_btn__495Xm:hover {
-  opacity: 0.76;
-}
-
-.nav_Nav__asXJu .nav_content___4bNN .nav_btn__495Xm .nav_icon__rHkbz {
-  width: 20px;
-  height: 20px;
-  opacity: 0.7;
-}
-
-.nav_Nav__asXJu .nav_right__I6l_l {
-  width: 250px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.nav_Nav__asXJu .nav_right__I6l_l .nav_signin__x0jOW {
-  background-color: transparent;
-  border: none;
-  color: #ffffff;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.nav_Nav__asXJu .nav_right__I6l_l .nav_signin__x0jOW:hover {
-  opacity: 0.6;
-}
-
-.nav_Nav__asXJu .nav_right__I6l_l .nav_signup__B_8Gv {
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 5px;
-  color: #ffffff;
-  padding: 7px 10px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.nav_Nav__asXJu .nav_right__I6l_l .nav_signup__B_8Gv:hover {
-  opacity: 0.6;
-}
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[13].use[5]!./src/scss/components/homeask.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.Homeask {
-  margin-top: 4%;
-  width: 95%;
-  height: 35px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.Homeask .left {
-  width: 55%;
-  padding-right: 20px;
-  height: 100%;
-  border-right: 0.7px solid grey;
-  display: flex;
-}
-.Homeask .left input {
-  height: 100%;
-  border: none;
-  width: 60%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  padding-left: 10px;
-  outline: none;
-}
-.Homeask .left input:focus {
-  height: calc(100% - 4px);
-  border: 2px solid #0070f3;
-}
-.Homeask .left button {
-  height: calc(100% + 2px);
-  width: 40%;
-  border: none;
-  background-color: #753FC8;
-  color: white;
-  font-weight: 550;
-  font-size: 0.8rem;
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-  cursor: pointer;
-}
-.Homeask .left button:hover {
-  background-color: rgb(126, 71, 178);
-}
-.Homeask .right {
-  padding-left: 20px;
-  width: 100px;
-  height: 100%;
-}
-.Homeask .right button {
-  background-color: transparent;
-  border: 1.7px solid #753FC8;
-  border-radius: 4px;
-  color: white;
-  height: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  font-weight: 550;
-  cursor: pointer;
-}
-.Homeask .right button:hover {
-  border: 1.8px solid white;
-  transition: 0.5s ease;
-  filter: brightness(5);
-}
-
-@media screen and (max-width: 700px) {
-  .Homeask {
-    margin-top: 2%;
-    width: 95%;
-    height: 25vh;
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/scss/components/nav.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.nav_Nav__EYF8t{
+    background-color: transparent;
+    width: 100%;
+    height: 3.6rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .Homeask .left {
-    width: 95%;
-    padding-right: 0;
-    height: 67%;
-    border-bottom: 0.7px solid grey;
-    border-right: none;
+    z-index: 100;
+}
+.nav_Nav__EYF8t .nav_content__fcOi3{
+    margin-left: 50px;
+    width: 50%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .Homeask .left input {
-    height: 50%;
-    border: none;
-    width: 100%;
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
-    box-sizing: border-box;
-    padding-left: 10px;
-    outline: none;
-  }
-  .Homeask .left input:focus {
-    height: 50%;
-    border: 1px solid #0070f3;
-  }
-  .Homeask .left button {
-    height: 50%;
-    width: 100%;
-    border: none;
-    background-color: #753FC8;
+    align-items: center;
+    gap: 1.5rem;
+}
+.nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl{
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+.nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl img{
+    width: 30%;
+    height: 100%;
+}
+.nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl h2{
+    font-size: 1.4rem;
     color: white;
     font-weight: 550;
-    font-size: 0.9rem;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    cursor: pointer;
-  }
-  .Homeask .left button:hover {
-    background-color: rgb(126, 71, 178);
-  }
-  .Homeask .right {
-    padding-left: 0px;
-    width: 95%;
-    height: 30%;
-  }
-  .Homeask .right button {
-    width: 100%;
+}
+.nav_Nav__EYF8t .nav_content__fcOi3 .nav_btn__fiGDz{
+    height: 60%;
     background-color: transparent;
-    border: 1.7px solid #753FC8;
-    border-radius: 4px;
-    color: white;
-    height: 90%;
-    padding-left: 20px;
-    padding-right: 10px;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    font-size: 1rem;
-    font-weight: 500;
+    color: white;
+    font-size: 0.83rem;
+    font-weight: 430;
+    margin-top: 20px;
     cursor: pointer;
-  }
-  .Homeask .right button:hover {
-    border: 1.8px solid white;
-    transition: 0.5s ease;
-  }
+    transition: 0.4s ease;
 }
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/scss/pages/home.module.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.home_main__lQ2zP {
+.nav_Nav__EYF8t .nav_content__fcOi3 .nav_btn__fiGDz:hover{
+    opacity: 0.76;
+}
+.nav_Nav__EYF8t .nav_content__fcOi3 .nav_btn__fiGDz .nav_icon__yV_hk{
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+.nav_Nav__EYF8t .nav_right__EG5oq{
+    width:250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    align-items: center;
+}
+.nav_Nav__EYF8t .nav_right__EG5oq .nav_signin__wKD9v{
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.nav_Nav__EYF8t .nav_right__EG5oq .nav_signin__wKD9v:hover{
+    opacity: 0.6;
+}
+.nav_Nav__EYF8t .nav_right__EG5oq .nav_signup__KVGQk{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 7px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.nav_Nav__EYF8t .nav_right__EG5oq .nav_signup__KVGQk:hover{
+    opacity: 0.6;
+}
+
+
+
+
+@media screen and (max-width:700px) {
+    .nav_Nav__EYF8t{
+        justify-content: space-between;
+    }
+    .nav_Nav__EYF8t .nav_right__EG5oq{
+        width:150px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+    }
+    .nav_Nav__EYF8t .nav_content__fcOi3{
+        width: 50%;
+        margin-left: 0px;
+    }
+    .nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        filter: brightness(1.1);
+    }
+    .nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl{
+        -webkit-user-select: none;
+           -moz-user-select: none;
+                user-select: none;
+    }
+    .nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl img{
+        width: 30%;
+        height: 100%;
+    }
+    .nav_Nav__EYF8t .nav_content__fcOi3 .nav_logo__uwwLl h2{
+        font-weight: 590;
+    }
+    .nav_Nav__EYF8t .nav_content__fcOi3 .nav_btn__fiGDz{
+        display: none;
+    }
+    .nav_nav__BgYrx .nav_right__EG5oq{
+        width: 40%;
+        justify-content: space-around;
+    }
+    .nav_ico__Gphkz{
+        color: white;
+        height: 90%;
+        width: 30px;
+    }
+    .nav_ico__Gphkz .nav_css-i4bv87-MuiSvgIcon-root__vu0dG{
+        color: white;
+    }
+
+    .nav_Nav__EYF8t .nav_show__gVdWr{
+        z-index: 2000 !important;
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        width: 95%;
+        height: calc(100vh - 4rem - 1.5rem);
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/scss/components/homeask.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.Homeask{
+    margin-top: 4%;
+    width: 95%;
+    height: 35px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    z-index: 0;
+}
+.Homeask .left{
+        width: 55%;
+        padding-right: 20px;
+        height: 100%;
+        border-right: 0.7px solid grey;
+        display: flex;
+}
+.Homeask .left input{
+            height: 100%;
+            border: none;
+            width: 60%;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+            padding-left: 10px;
+            outline: none;
+            z-index: 0;
+        }
+        .Homeask .left input:focus {
+            height: calc(100% - 4px);
+            border: 2px solid #0070f3;; 
+          }
+
+          .Homeask .left button{
+            height: calc(100% + 2px);
+            width: 40%;
+            border: none;
+            background-color: #753FC8;
+            color: white;
+            font-weight: 550;
+            font-size: 0.8rem;
+            border-bottom-right-radius:4px;
+            border-top-right-radius: 4px;
+            cursor: pointer;
+            z-index: 0;
+          }
+            .Homeask .left button:hover {
+               background-color: rgb(126, 71, 178);
+            }
+
+    .right{
+        padding-left: 20px;
+        width: 100px;
+        height: 100%;
+    }
+    .right  button{
+            background-color: transparent;
+            border: 1.7px solid #753FC8;
+            border-radius: 4px;
+            color: white;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            font-weight: 550;
+            cursor: pointer;
+            z-index: 0;
+    }
+            .right  button:hover{
+                border: 1.8px solid white;
+                transition: 0.5s ease;
+                filter: brightness(5);
+            }
+
+
+
+
+
+@media screen and (max-width:700px) {
+    .Homeask{
+        margin-top: 2%;
+        width: 95%;
+        height: 25vh;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 0;
+    }   
+    .Homeask   .left{
+            width: 95%;
+            padding-right: 0;
+            height: 67%;
+            border-bottom: 0.7px solid grey;
+            border-right: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 0;
+    }
+    .Homeask   .left input{
+                height: 50%;
+                border: none;
+                width: 100%;
+                border-bottom-left-radius: 4px;
+                border-top-left-radius: 4px;
+                box-sizing: border-box;
+                padding-left: 10px;
+                outline: none;
+                z-index: 0;
+            }
+            .Homeask   .left input:focus {
+                height: 50%;
+                border: 1px solid #0070f3;; 
+              }
+    
+              .Homeask   .left button{
+                height: 50%;
+                width: 100%;
+                border: none;
+                background-color: #753FC8;
+                color: white;
+                font-weight: 550;
+                font-size: 0.9rem;
+                border-bottom-right-radius:4px;
+                border-top-right-radius: 4px;
+                cursor: pointer;
+                z-index: 0;
+              }
+                .Homeask   .left button:hover {
+                   background-color: rgb(126, 71, 178);
+                }
+                .Homeask   .right{
+            padding-left: 0px;
+            width: 95%;
+            height: 30%;
+                }
+                .Homeask    button{
+                width: 100%;
+                background-color: transparent;
+                border: 1.7px solid #753FC8;
+                border-radius: 4px;
+                color: white;
+                height: 90%;
+                padding-left: 20px;
+                padding-right: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                z-index: 0;
+                }
+                .Homeask button:hover{
+                    border: 1.8px solid white;
+                    transition: 0.5s ease;
+                }
+            }
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/scss/pages/home.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+
+.home_main__Z0MeC {
   width: 100vw;
   height: auto;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #0D1116;
+  background-color: #0d1116;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   overflow-y: scroll;
+  z-index: 0;
 }
-
-.home_main__lQ2zP::-webkit-scrollbar {
+.home_main__Z0MeC::-webkit-scrollbar {
   display: none;
 }
-
-.home_main__lQ2zP .home_content__U83nQ {
+.home_main__Z0MeC .home_content__0LhVS {
   width: 60%;
   margin-top: calc(30vh - 4.3rem);
   margin-right: 10rem;
   height: 74vh;
-  z-index: 100;
+  z-index:1;
   display: flex;
   gap: 2%;
 }
 
-.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN {
+.home_main__Z0MeC .home_content__0LhVS .home_line__U451T {
   width: 3%;
   height: 100%;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
 
-.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_round__7y8N_ {
+.home_main__Z0MeC .home_content__0LhVS .home_line__U451T .home_round__QGVIE {
   border: 1.955px solid grey;
   border-radius: 50%;
   width: 30%;
   height: 8px;
 }
-
-.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_blue__KKVNb {
+.home_main__Z0MeC .home_content__0LhVS .home_line__U451T .home_blue__hDqEj {
   width: 3px;
   height: 55%;
-  background: linear-gradient(transparent, #7C72FF 30%);
+  background: linear-gradient(transparent, #7c72ff 30%);
 }
 
-.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_code__a1mDQ {
+.home_main__Z0MeC .home_content__0LhVS .home_line__U451T .home_code__L20wI {
   color: white;
   width: 60px;
   height: 60px;
@@ -319,19 +398,18 @@
   background-repeat: no-repeat;
   background-size: 100%;
 }
-
-.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_code__a1mDQ .home_img__t6BD4 {
+.home_main__Z0MeC .home_content__0LhVS .home_line__U451T .home_code__L20wI .home_img__QP1ak {
   width: 50%;
   height: 80%;
 }
 
-.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_green__cuKEE {
+.home_main__Z0MeC .home_content__0LhVS .home_line__U451T .home_green__wnk4P {
   width: 3px;
   height: 55%;
-  background: linear-gradient(#7C72FF, #2DA44E 80%, #3FB950);
+  background: linear-gradient(#7c72ff, #2da44e 80%, #3fb950);
 }
 
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA {
+.home_main__Z0MeC .home_content__0LhVS .home_info__INbu_ {
   width: 95%;
   height: 100%;
   display: flex;
@@ -339,22 +417,24 @@
   align-items: center;
   flex-direction: column;
 }
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg {
+.home_up__ygNGi {
   color: white;
   width: 95%;
 }
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h1 {
+
+.home_up__ygNGi h1 {
   margin-top: -0.3rem;
   margin-bottom: 0.4rem;
   font-size: 3.7rem;
 }
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h3 {
+.home_up__ygNGi h3 {
   margin-top: 0;
   opacity: 0.7;
   font-size: 1.2rem;
   font-weight: 380;
 }
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH {
+
+.home_partner__8Z0Is {
   margin-top: 6%;
   width: 95%;
   height: 120px;
@@ -363,14 +443,15 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH h3 {
+.home_partner__8Z0Is h3 {
   margin-top: 0;
   opacity: 0.7;
   font-size: 1.1rem;
   font-weight: 380;
   color: white;
 }
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK {
+
+.home_company__eh2Uf {
   width: 100%;
   height: 80%;
   display: flex;
@@ -378,13 +459,12 @@
   align-items: center;
   gap: 20px;
 }
-.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK img {
+.home_company__eh2Uf img {
   filter: grayscale(100%);
 }
-
-.home_main__lQ2zP .home_image__1uT4I {
+.home_main__Z0MeC .home_image__nkifc {
   position: absolute;
-  right: -2rem;
+  right: 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -393,87 +473,93 @@
   top: 1rem;
   bottom: auto;
 }
-
-.home_main__lQ2zP .home_image__1uT4I img {
+.home_main__Z0MeC .home_image__nkifc img {
   width: 100%;
   height: 100%;
 }
-
-.home_main__lQ2zP .home_image__1uT4I::before,
-.home_main__lQ2zP .home_image__1uT4I::after {
+.home_main__Z0MeC .home_image__nkifc::before,
+.home_main__Z0MeC .home_image__nkifc::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(to bottom, rgba(13, 17, 22, 0.99) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 17, 22, 0.99) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   pointer-events: none;
 }
-
-.home_main__lQ2zP .home_image__1uT4I::after {
+.home_main__Z0MeC .home_image__nkifc::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   height: 160px;
-  background: linear-gradient(to top, rgb(13, 17, 22) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(13, 17, 22, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   pointer-events: none;
 }
-
-.home_main__lQ2zP .home_image__1uT4I::before {
+.home_main__Z0MeC .home_image__nkifc::before {
   top: 0;
 }
-
-.home_main__lQ2zP .home_image__1uT4I::after {
+.home_main__Z0MeC .home_image__nkifc::after {
   bottom: 0;
 }
 
-@media screen and (max-width: 700px) {
-  .home_main__lQ2zP {
+@media screen and (max-width:700px) {
+
+  .home_main__Z0MeC {
     width: 100vw;
     overflow-x: hidden !important;
     overflow: hidden;
   }
-  .home_main__lQ2zP .home_image__1uT4I {
+  .home_main__Z0MeC .home_image__nkifc {
     right: 0rem;
-    top: -6rem;
+    top: -5rem;
     width: 100% !important;
     height: 50vh;
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
     overflow: hidden !important;
-    opacity: 0.7;
+    opacity: 0.6;
   }
-  .home_main__lQ2zP .home_image__1uT4I img {
+  .home_main__Z0MeC .home_image__nkifc img {
     overflow: hidden;
-    width: 120% !important;
+    width: 130% !important;
     height: 100%;
   }
-  .home_main__lQ2zP .home_image__1uT4I::before {
+  .home_main__Z0MeC .home_image__nkifc::before {
     top: 0;
   }
-  .home_main__lQ2zP .home_image__1uT4I::after {
+  .home_main__Z0MeC .home_image__nkifc::after {
     bottom: 0;
   }
-  .home_main__lQ2zP .home_content__U83nQ {
+
+  .home_main__Z0MeC .home_content__0LhVS {
     width: 90%;
     margin-right: 0rem;
     height: 85vh;
     gap: 3%;
   }
-  .home_content__U83nQ::-webkit-scrollbar {
+  .home_content__0LhVS::-webkit-scrollbar {
     display: none;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_blue__KKVNb {
+  .home_main__Z0MeC .home_content__0LhVS .home_line__U451T .home_blue__hDqEj {
     width: 2px;
     height: 65%;
-    background: linear-gradient(transparent, #7C72FF 30%);
+    background: linear-gradient(transparent, #7c72ff 30%);
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_green__cuKEE {
+  .home_main__Z0MeC .home_content__0LhVS .home_line__U451T .home_green__wnk4P {
     width: 2px;
     height: 65%;
-    background: linear-gradient(#7C72FF, #2DA44E 80%, #3FB950);
+    background: linear-gradient(#7c72ff, #2da44e 80%, #3fb950);
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA {
+
+  .home_main__Z0MeC .home_content__0LhVS .home_info__INbu_ {
     width: 95%;
     height: 100%;
     display: flex;
@@ -481,22 +567,24 @@
     align-items: center;
     flex-direction: column;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg {
+  .home_up__ygNGi {
     color: white;
     width: 100%;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h1 {
+  .home_up__ygNGi h1 {
     margin-top: -1.7rem;
     margin-bottom: 0.4rem;
     font-size: 3rem;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h3 {
+
+  .home_up__ygNGi h3 {
     margin-top: 0;
     opacity: 0.5;
     font-size: 1.1rem;
     font-weight: 270;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH {
+
+  .home_partner__8Z0Is {
     margin-top: 6%;
     width: 95%;
     height: 20vh;
@@ -505,14 +593,15 @@
     align-items: flex-start;
     flex-direction: column;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH h3 {
+  .home_partner__8Z0Is h3 {
     margin-top: 0;
     opacity: 0.7;
     font-size: 1.1rem;
     font-weight: 380;
     color: white;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK {
+
+  .home_company__eh2Uf {
     width: 100%;
     height: 80%;
     display: grid;
@@ -522,7 +611,8 @@
     justify-content: center;
     align-items: center;
   }
-  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK img {
+  .home_company__eh2Uf img {
     filter: grayscale(100%);
   }
 }
+
