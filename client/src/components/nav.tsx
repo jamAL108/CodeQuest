@@ -18,7 +18,7 @@ const Nav: React.FC = () => {
   const [flag , setflag] = useState<boolean>(false);
   const [nav , setnav] = useState<boolean>(false);
   useEffect(()=>{
-    if(window.innerHeight>=700){
+    if(window.innerHeight<=700){
       setflag(true)
     }else{
       setflag(false)
