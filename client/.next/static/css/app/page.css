@@ -1,0 +1,528 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/scss/components/nav.module.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.nav_Nav__asXJu {
+  background-color: transparent;
+  width: 100%;
+  height: 3.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN {
+  margin-left: 50px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC img {
+  width: 30%;
+  height: 100%;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN .nav_logo__zdiRC h2 {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 550;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN .nav_btn__495Xm {
+  height: 60%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 0.83rem;
+  font-weight: 430;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN .nav_btn__495Xm:hover {
+  opacity: 0.76;
+}
+
+.nav_Nav__asXJu .nav_content___4bNN .nav_btn__495Xm .nav_icon__rHkbz {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.nav_Nav__asXJu .nav_right__I6l_l {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.nav_Nav__asXJu .nav_right__I6l_l .nav_signin__x0jOW {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav_Nav__asXJu .nav_right__I6l_l .nav_signin__x0jOW:hover {
+  opacity: 0.6;
+}
+
+.nav_Nav__asXJu .nav_right__I6l_l .nav_signup__B_8Gv {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav_Nav__asXJu .nav_right__I6l_l .nav_signup__B_8Gv:hover {
+  opacity: 0.6;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[13].use[5]!./src/scss/components/homeask.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Homeask {
+  margin-top: 4%;
+  width: 95%;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Homeask .left {
+  width: 55%;
+  padding-right: 20px;
+  height: 100%;
+  border-right: 0.7px solid grey;
+  display: flex;
+}
+.Homeask .left input {
+  height: 100%;
+  border: none;
+  width: 60%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  padding-left: 10px;
+  outline: none;
+}
+.Homeask .left input:focus {
+  height: calc(100% - 4px);
+  border: 2px solid #0070f3;
+}
+.Homeask .left button {
+  height: calc(100% + 2px);
+  width: 40%;
+  border: none;
+  background-color: #753FC8;
+  color: white;
+  font-weight: 550;
+  font-size: 0.8rem;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  cursor: pointer;
+}
+.Homeask .left button:hover {
+  background-color: rgb(126, 71, 178);
+}
+.Homeask .right {
+  padding-left: 20px;
+  width: 100px;
+  height: 100%;
+}
+.Homeask .right button {
+  background-color: transparent;
+  border: 1.7px solid #753FC8;
+  border-radius: 4px;
+  color: white;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 550;
+  cursor: pointer;
+}
+.Homeask .right button:hover {
+  border: 1.8px solid white;
+  transition: 0.5s ease;
+  filter: brightness(5);
+}
+
+@media screen and (max-width: 700px) {
+  .Homeask {
+    margin-top: 2%;
+    width: 95%;
+    height: 25vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .Homeask .left {
+    width: 95%;
+    padding-right: 0;
+    height: 67%;
+    border-bottom: 0.7px solid grey;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .Homeask .left input {
+    height: 50%;
+    border: none;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    outline: none;
+  }
+  .Homeask .left input:focus {
+    height: 50%;
+    border: 1px solid #0070f3;
+  }
+  .Homeask .left button {
+    height: 50%;
+    width: 100%;
+    border: none;
+    background-color: #753FC8;
+    color: white;
+    font-weight: 550;
+    font-size: 0.9rem;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+  }
+  .Homeask .left button:hover {
+    background-color: rgb(126, 71, 178);
+  }
+  .Homeask .right {
+    padding-left: 0px;
+    width: 95%;
+    height: 30%;
+  }
+  .Homeask .right button {
+    width: 100%;
+    background-color: transparent;
+    border: 1.7px solid #753FC8;
+    border-radius: 4px;
+    color: white;
+    height: 90%;
+    padding-left: 20px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .Homeask .right button:hover {
+    border: 1.8px solid white;
+    transition: 0.5s ease;
+  }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/scss/pages/home.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.home_main__lQ2zP {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #0D1116;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.home_main__lQ2zP::-webkit-scrollbar {
+  display: none;
+}
+
+.home_main__lQ2zP .home_content__U83nQ {
+  width: 60%;
+  margin-top: calc(30vh - 4.3rem);
+  margin-right: 10rem;
+  height: 74vh;
+  z-index: 100;
+  display: flex;
+  gap: 2%;
+}
+
+.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN {
+  width: 3%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_round__7y8N_ {
+  border: 1.955px solid grey;
+  border-radius: 50%;
+  width: 30%;
+  height: 8px;
+}
+
+.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_blue__KKVNb {
+  width: 3px;
+  height: 55%;
+  background: linear-gradient(transparent, #7C72FF 30%);
+}
+
+.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_code__a1mDQ {
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/_next/static/media/Ellipse.3a24fd0b.png) !important;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_code__a1mDQ .home_img__t6BD4 {
+  width: 50%;
+  height: 80%;
+}
+
+.home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_green__cuKEE {
+  width: 3px;
+  height: 55%;
+  background: linear-gradient(#7C72FF, #2DA44E 80%, #3FB950);
+}
+
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg {
+  color: white;
+  width: 95%;
+}
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h1 {
+  margin-top: -0.3rem;
+  margin-bottom: 0.4rem;
+  font-size: 3.7rem;
+}
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h3 {
+  margin-top: 0;
+  opacity: 0.7;
+  font-size: 1.2rem;
+  font-weight: 380;
+}
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH {
+  margin-top: 6%;
+  width: 95%;
+  height: 120px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH h3 {
+  margin-top: 0;
+  opacity: 0.7;
+  font-size: 1.1rem;
+  font-weight: 380;
+  color: white;
+}
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK img {
+  filter: grayscale(100%);
+}
+
+.home_main__lQ2zP .home_image__1uT4I {
+  position: absolute;
+  right: -2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: 95vh;
+  top: 1rem;
+  bottom: auto;
+}
+
+.home_main__lQ2zP .home_image__1uT4I img {
+  width: 100%;
+  height: 100%;
+}
+
+.home_main__lQ2zP .home_image__1uT4I::before,
+.home_main__lQ2zP .home_image__1uT4I::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(13, 17, 22, 0.99) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+
+.home_main__lQ2zP .home_image__1uT4I::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to top, rgb(13, 17, 22) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+
+.home_main__lQ2zP .home_image__1uT4I::before {
+  top: 0;
+}
+
+.home_main__lQ2zP .home_image__1uT4I::after {
+  bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .home_main__lQ2zP {
+    width: 100vw;
+    overflow-x: hidden !important;
+    overflow: hidden;
+  }
+  .home_main__lQ2zP .home_image__1uT4I {
+    right: 0rem;
+    top: -6rem;
+    width: 100% !important;
+    height: 50vh;
+    transform: rotate(-90deg);
+    overflow: hidden !important;
+    opacity: 0.7;
+  }
+  .home_main__lQ2zP .home_image__1uT4I img {
+    overflow: hidden;
+    width: 120% !important;
+    height: 100%;
+  }
+  .home_main__lQ2zP .home_image__1uT4I::before {
+    top: 0;
+  }
+  .home_main__lQ2zP .home_image__1uT4I::after {
+    bottom: 0;
+  }
+  .home_main__lQ2zP .home_content__U83nQ {
+    width: 90%;
+    margin-right: 0rem;
+    height: 85vh;
+    gap: 3%;
+  }
+  .home_content__U83nQ::-webkit-scrollbar {
+    display: none;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_blue__KKVNb {
+    width: 2px;
+    height: 65%;
+    background: linear-gradient(transparent, #7C72FF 30%);
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_line__gBhCN .home_green__cuKEE {
+    width: 2px;
+    height: 65%;
+    background: linear-gradient(#7C72FF, #2DA44E 80%, #3FB950);
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg {
+    color: white;
+    width: 100%;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h1 {
+    margin-top: -1.7rem;
+    margin-bottom: 0.4rem;
+    font-size: 3rem;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_up__51hUg h3 {
+    margin-top: 0;
+    opacity: 0.5;
+    font-size: 1.1rem;
+    font-weight: 270;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH {
+    margin-top: 6%;
+    width: 95%;
+    height: 20vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH h3 {
+    margin-top: 0;
+    opacity: 0.7;
+    font-size: 1.1rem;
+    font-weight: 380;
+    color: white;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 13px;
+    justify-content: center;
+    align-items: center;
+  }
+  .home_main__lQ2zP .home_content__U83nQ .home_info__kWlZA .home_partner__bTRNH .home_company__glISK img {
+    filter: grayscale(100%);
+  }
+}

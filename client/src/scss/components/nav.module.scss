@@ -7,6 +7,62 @@
     align-items: center;
     z-index: 100;
 }
+.Nav .content{
+    margin-left: 50px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.Nav .content .logo{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.Nav .content .logo{
+    user-select: none;
+}
+.Nav .content .logo img{
+    width: 30%;
+    height: 100%;
+}
+.Nav .content .logo h2{
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 550;
+}
+.Nav .content .btn{
+    height: 60%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.83rem;
+    font-weight: 430;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.Nav .content .btn:hover{
+    opacity: 0.76;
+}
+.Nav .content .btn .icon{
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
 .Nav .right{
     width:250px;
     height: 100%;

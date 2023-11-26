@@ -1,7 +1,12 @@
+'use client';
+import React,{useEffect} from 'react';
 import Nav from '../components/nav';
 import styles from  '../scss/pages/home.module.scss'
 import HomeAsk from '@/components/home.ask';
 export default function Home() {
+  useEffect(()=>{
+   console.log("heloo")
+  },[])
   return (
     <div className={styles.main}>
       <Nav/>
