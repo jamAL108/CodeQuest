@@ -1,0 +1,197 @@
+.DashNav{
+    width: 20%;
+    height: 100%;
+    background-color: #1C1C24;
+    border-right: 1px solid #23232B;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+.DashNav .up{
+    margin-top:2.3rem;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.DashNav .up .left{
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.DashNav .up .left img{
+    width: 20%;
+    height: 90%;
+}
+.DashNav .up .left h2{
+    margin-top: 0.5rem;
+font-size: 1.2rem;
+color: white;
+font-weight: 460;
+opacity: 0.9;
+}
+.DashNav .up .right{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.DashNav .up .right .icon{
+    margin-left: 20px;
+}
+.DashNav .middle{
+    margin-top:1.4rem;
+    width: 100%;
+    height: 5rem;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.DashNav .middle p{
+    margin: 0;
+    width: 73%;
+    text-align: left;
+    font-size: 0.84rem;
+    opacity: 0.8;
+    font-weight: 330;
+}
+
+.DashNav .down{
+    width: 100%;
+    height: 10rem;
+    margin-top: -0.3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.DashNav .down .top{
+    width: 70%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    background-color: #282833;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.67s ease;
+}
+.DashNav .down .top:hover{
+    transform: scale(1.04);
+    filter: brightness(1.1);
+}
+.DashNav .down .top .icon{
+    padding-left: 10px;
+}
+.DashNav .down .top h2{
+    font-size: 0.88rem;
+    opacity: 0.6;
+    font-weight: 550;
+}
+.DashNav .down .line{
+    margin: 0.8rem 0;
+    width:80%;
+    height: 3px;
+    background-color: #23232B;
+    filter: brightness(1.1);
+}
+.DashNav .down .bottom{
+    width: 70%;
+    height: 54%;
+    display: flex;
+    justify-content: space-between;
+    gap: 14%;
+}
+.DashNav .down .bottom .dash{
+    width: 38%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.1rem;
+}
+.DashNav .down .bottom .dash .upper{
+    height: 82% !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    /* border: 1px solid #6F8AE9; */
+    cursor: pointer;
+}
+.DashNav .down .bottom .dash .upper .boxy{
+    height: 88% !important;
+    width: 88%;
+    background-color: #282833;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.DashNav .down .bottom .dash h2{
+    margin: 0rem;
+    padding: 0;
+    color: white;
+    font-size: 0.87rem;
+    font-weight: 450;
+    height: 18%;
+}
+.DashNav .profile{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: pointer;
+}
+.DashNav .profile .cont{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    gap: 0.2rem;
+  margin-left: -25px;
+}
+.DashNav .profile .cont .user_cont{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.DashNav .profile .cont .user_cont .icon{
+    background-color:#282833 ;
+    border-radius: 50%;
+    padding:7px;
+}
+.DashNav .profile .cont .user{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.DashNav .profile .cont .user h2{
+    color: white;
+    font-size: 0.77rem;
+    margin: 0;
+    font-weight: 520;
+}
+
+.DashNav .profile .cont .user p{
+    color: white;
+    font-size: 0.62rem;
+    margin: 0;
+    opacity: 0.7;
+}
