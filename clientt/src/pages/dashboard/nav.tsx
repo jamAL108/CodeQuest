@@ -1,9 +1,17 @@
 import React from 'react'
 import '../../scss/dashboard/dashboard.nav.css'
 import Logo from '../../images/mainlogog.png'
-import { AlignRight , LayoutDashboard ,ListPlus , Settings ,UserRound   } from 'lucide-react'; 
+import { AlignRight , LayoutDashboard ,ListPlus , Settings ,UserRound } from 'lucide-react'; 
 
-const Nav = () => {
+type myfun=(arg: string) => void;
+
+interface MyComponentProps{
+  flagfun:myfun,
+  flag:number
+}
+
+const Nav: React.FC<MyComponentProps> = (props) => {
+  const {flagfun , flag} = props;
   return (
     <div className="DashNav">
        <div className="up">
@@ -26,18 +34,24 @@ const Nav = () => {
          </div>
          <div className="line"></div>
          <div className="bottom">
-           <div className="dash">
-            <div className="upper">
-             <div className="boxy">
-              <LayoutDashboard color='#F0A65D' size={25}/>
+           <div className="dash" onClick={(e)=>{
+            e.preventDefault()
+            flagfun('activities')
+           }}>
+            <div className="upper" style={flag===0 ? {border:"1px solid #6F8AE9"} : {border:"none"}}>
+             <div className="boxy" style={flag===0 ? {backgroundColor:"#6F8AE9"} : {backgroundColor:"#282833"}}>
+              <LayoutDashboard color={flag===0 ? "#282833" : "#F0A65D"} size={24}/>
              </div>
              </div>
              <h2>Dashboard</h2>
            </div>
-           <div className="dash">
-           <div className="upper">
-           <div className="boxy">
-              <Settings color='#87CAF6' size={25}/>
+           <div className="dash" onClick={(e)=>{
+            e.preventDefault()
+            flagfun('settings')
+           }}>
+           <div className="upper" style={flag===1 ? {border:"1px solid #6F8AE9"} : {border:"none"}}>
+           <div className="boxy" style={flag===1 ? {backgroundColor:"#6F8AE9"} : {backgroundColor:"#282833"}}>
+              <Settings color={flag===1 ? "#282833" : "#87CAF6"} size={24}/>
              </div>
              </div>
              <h2>Settings</h2>

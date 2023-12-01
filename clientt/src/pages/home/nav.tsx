@@ -6,6 +6,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Logo from '../../images/mainlogog.png'
+import { useNavigate } from 'react-router-dom';
 const Nav: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<any>(null);
   const open = Boolean(anchorEl);
@@ -17,6 +18,7 @@ const Nav: React.FC = () => {
   };
   const [flag , setflag] = useState<boolean>(true);
   const [nav , setnav] = useState<boolean>(false);
+  const Navigate = useNavigate();
   useEffect(()=>{
     if(window.innerWidth<=700){
       setflag(true)
@@ -57,9 +59,17 @@ const Nav: React.FC = () => {
             e.preventDefault()
             e.stopPropagation()
           }}>
+        {flag===false &&  (
+          <button className="signin" onClick={(e)=>{
+            e.preventDefault()
+            e.stopPropagation()
+            Navigate('/auth/signin')
+          }}>Sign in</button>
+        )}
         <button className="signup" onClick={(e)=>{
           e.preventDefault()
           e.stopPropagation()
+          Navigate('/auth/signup')
         }}>Sign up</button>
         {flag === true && nav===false && (
           <MenuIcon className="ico" onClick={(e)=>{
@@ -74,12 +84,6 @@ const Nav: React.FC = () => {
             e.stopPropagation()
             setnav(false)
           }}/>
-        )}
-        {flag===false &&  (
-          <button className="signin" onClick={(e)=>{
-            e.preventDefault()
-            e.stopPropagation()
-          }}>Sign in</button>
         )}
       </div>
 
