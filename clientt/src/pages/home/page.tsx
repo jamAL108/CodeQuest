@@ -6,10 +6,20 @@ import Symbol from '../../images/symbol.png'
 import Kpmg from '../../images/kpmg.svg'
 import Homeback from '../../images/homeback.png'
 import Homeback1 from '../../images/homeback1.png'
+import { useCookies } from "react-cookie";
+import { useDispatch  } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { verifyCookie } from '../../redux/action';
+import { Dispatch } from 'redux';
+
 const Home: React.FC  =()=> {
+  const dispatch: Dispatch<any> = useDispatch()
+  const navigate = useNavigate()
+  const [cookies, removeCookie] = useCookies([]);
   const [ fla,setfla] = useState<boolean>(false);
   useEffect(()=>{
-   console.log("heloo")
+   dispatch(verifyCookie(navigate,removeCookie))
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   useEffect(()=>{
@@ -29,7 +39,7 @@ const Home: React.FC  =()=> {
            <div className="blue">
            </div>
            <div className="code">
-           <img src={Symbol} className="img" alt="" />
+           <img src={Symbol} className="img" alt="fg" />
            </div>
            <div className="green">
 
@@ -61,13 +71,13 @@ const Home: React.FC  =()=> {
        {fla===false && (
         <img 
         src={Homeback}
-        alt="My Image"
+        alt="Myage"
       />
       )}
       {fla===true && (
                 <img 
                 src={Homeback1}
-                alt="My Image"
+                alt="Myage"
               />
       )}
       <div className="shadow"></div>
