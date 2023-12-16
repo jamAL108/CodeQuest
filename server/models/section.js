@@ -1,27 +1,28 @@
 import mongoose from "mongoose";
-const user = mongoose.Schema({
-  firstName: {
+const Section = mongoose.Schema({
+  name: {
     type: String,
     required: true
   },
-  lastName:{
+  jobID:{
     type:String,
     required:true
   },
-  email: {
+  roleType: {
     type: String,
     required: true
   },
-  password: {
+  dueDate: {
     type: String,
     required: true,
   },
-  organization:{
-    type:String
+  status:{
+    type:boolean,
+    required:true
   },
-  typeOfWork:{
-    type:String
+  content:{
+    type:[]
   }
 });
 
-export default mongoose.model("user", user);
+export default mongoose.model("Section", Section);

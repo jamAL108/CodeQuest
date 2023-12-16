@@ -3,15 +3,14 @@ import '../../scss/dashboard/dashboard.nav.css'
 import Logo from '../../images/mainlogog.png'
 import { AlignRight , LayoutDashboard ,ListPlus , Settings ,UserRound } from 'lucide-react'; 
 
-type myfun=(arg: string) => void;
+import { user , dashboardNavProps } from '../../interface/interface';
 
-interface MyComponentProps{
-  flagfun:myfun,
-  flag:number
-}
-
-const Nav: React.FC<MyComponentProps> = (props) => {
+const Nav: React.FC<dashboardNavProps> = (props) => {
   const {flagfun , flag} = props;
+  
+  const Data: string | null = localStorage.getItem('codeQuestUSER')
+  console.log(Data)
+  const user: user | null =  Data ? JSON.parse(Data) : null
   return (
     <div className="DashNav">
        <div className="up">
@@ -28,9 +27,14 @@ const Nav: React.FC<MyComponentProps> = (props) => {
           <p>Start new Interview sections</p>
        </div>
        <div className="down">
-         <div className="top">
-         <ListPlus color='#AD9BF5' className='icon' size={30}/>
-         <h2>Add new Section</h2>
+        <div className="covertop" style={flag===2 ? {border:"1px solid #6F8AE9"} : {border:"none"}}>
+         <div className="top" style={flag===2 ? {backgroundColor:"#6F8AE9" , color:"#282833" , pointerEvents:"none"} : {backgroundColor:" #282833", color:"white"}} onClick={(e)=>{
+            e.preventDefault()
+            flagfun('addsection')
+           }} >
+         <ListPlus color={flag===2 ? "#282833" :'#AD9BF5'} className='icon' size={25}/>
+         <h2 style={flag===2 ? {fontWeight:"530"} : {fontWeight:"470"}}>Add new Section</h2>
+         </div>
          </div>
          <div className="line"></div>
          <div className="bottom">
@@ -64,7 +68,7 @@ const Nav: React.FC<MyComponentProps> = (props) => {
         <UserRound color='white' size={26} className='icon'/> 
         </div>
         <div className="user">
-          <h2>Jamal Mydeen</h2>
+          <h2>{user?.firstName} {user?.lastName}</h2>
           <p>jamalmohideen971@gmail.com</p>
         </div>
         </div>

@@ -6,9 +6,9 @@ import {Provider} from 'react-redux';
 import { createStore, applyMiddleware, compose } from "redux";
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import reducers from './redux';
+import { reducer } from './redux';
 import thunk from "redux-thunk";
-const store = createStore(reducers, compose(applyMiddleware(thunk)));
+const store = createStore(reducer, compose(applyMiddleware(thunk)));
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

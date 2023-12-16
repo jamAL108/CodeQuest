@@ -12,12 +12,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-  cors({
+  cors(
+    {
     // origin: "https://rablo-round3.vercel.app",
     origin:"http://localhost:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
-  })
+  }
+  )
 );
 app.use("/api", Userrouter);
 const port = 8000;

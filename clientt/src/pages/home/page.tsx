@@ -13,12 +13,18 @@ import { verifyCookie } from '../../redux/action';
 import { Dispatch } from 'redux';
 
 const Home: React.FC  =()=> {
+  useEffect(() => {
+    // Update document title when component mounts
+    document.title = 'codeQuest - Home';
+    // Clean up document title when component unmounts
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
+  }, []);
   const dispatch: Dispatch<any> = useDispatch()
   const navigate = useNavigate()
   const [cookies, removeCookie] = useCookies([]);
   const [ fla,setfla] = useState<boolean>(false);
   useEffect(()=>{
-   dispatch(verifyCookie(navigate,removeCookie))
+   dispatch(verifyCookie(navigate,removeCookie,false))
      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 

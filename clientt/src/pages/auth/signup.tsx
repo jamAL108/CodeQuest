@@ -1,19 +1,78 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import '../../scss/auth/signup.scss'
 import Logo from '../../images/mainlogog.png'
 import { Eye , EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
+import { signupInterface } from '../../interface/interface'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { signup } from '../../redux/action';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { SIGNUPERROR , EMAIL } from '../../redux/actionTypes'
+import { RootState } from '../../redux';
+import { Dispatch } from 'redux';
 const Signup: React.FC = () => {
-  const [flag , setflag] = useState<boolean>(false);
+  useEffect(() => {
+    // Update document title when component mounts
+    document.title = 'codeQuest - signup';
+    // Clean up document title when component unmounts
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
+  }, []);
+
   const navigate = useNavigate()
-  // const [showPassword, setShowPassword] = React.useState<boolean>(false);
+  const dispatch: Dispatch<any> = useDispatch()
+const store = useSelector((state: RootState)=>state)
+  const [flag , setflag] = useState<boolean>(false);
+  const [error , seterror]= useState<string>("")
+  const [ data , setdata] = useState<signupInterface>({
+    firstName:"",
+    lastName:"",
+    email:"",
+    password:"",
+    confirmPassword:"",
+    organization:"",
+    typeOfWork:"",
+    termsncontd:false
+  })
 
-  // const handleClickShowPassword = () => setShowPassword((show) => !show);
+  useEffect(()=>{
+    if(store.user.email.length!==0){
+        setdata({...data, email:store.user.email})
+        dispatch({type:EMAIL,payload:""})
+    }
+  },[store?.user?.email])
+ 
+  useEffect(()=>{
+    if(store.user.signuperror!==""){
+      seterror(store.user.signuperror)
+      dispatch({type:SIGNUPERROR , payload:""})
+    }
+    // eslint-disable-next-line 
+  },[store.user.signuperror])
+  
 
-  // const handleMouseDownPassword: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-  //   event.preventDefault();
-  // };
+  const check =()=>{
+    seterror("")
+    if(data.firstName.trim()==="" || data.lastName.trim()==="" || data.email.trim()==="" || data.confirmPassword.trim()===""){
+      Alert("Enter all required details properly")
+    }else if(data.password !== data.confirmPassword){
+        Alert("Password confirmation not matching !")
+    }else if(!data.email.includes('@')){
+        Alert("Provide Proper Email ID !")
+    }else if(data.termsncontd===false){
+        Alert("Please check the terms and condition policies")
+    }else{
+       dispatch(signup(data,navigate));
+    }
+  }
+
+  const Alert=(msg:string)=>{
+    seterror(msg)
+    setTimeout(() => {    
+      alert(msg)
+    }, 1000);
+  }
+
   return (
     <div className="Signup">
         <div className="container">
@@ -31,21 +90,22 @@ const Signup: React.FC = () => {
               <div className="up" id='inp'>
                 <div className="input-label">
                   <p>Enter First Name <span>*</span></p>
-                <input type="text" placeholder='First Name' />
+
+                <input type="text" placeholder='First Name' value={data.firstName} onChange={(e)=> setdata({...data , firstName:e.target.value})}/>
                 </div>
                 <div className="input-label">
                   <p>Enter Last Name <span>*</span></p>
-                <input type="text" placeholder='Last Name' />
+                <input type="text" placeholder='Last Name' value={data.lastName} onChange={(e)=> setdata({...data , lastName:e.target.value})} />
                 </div>
                 <div className="input-label">
                   <p>Enter your Email <span>*</span></p>
-                <input type="text" placeholder='email' />
+                <input type="text" placeholder='email' value={data.email} onChange={(e)=> setdata({...data , email:e.target.value})} />
                 </div>
                 </div>
                 <div className="middle" id='inp'>
                 <div className="input-label">
                   <p>Enter Password<span>*</span></p>
-                <input type={flag===true ? "text" : "password"} placeholder='password' />
+                <input type={flag===true ? "text" : "password"} placeholder='password' value={data.password} onChange={(e)=> setdata({...data , password:e.target.value})} />
                 {flag ===false ? (
             <Eye className="icon" size={18} onClick={(e)=>{
               setflag(true)
@@ -58,7 +118,7 @@ const Signup: React.FC = () => {
                 </div>
                 <div className="input-label">
                   <p>confirm password<span>*</span></p>
-                <input type={flag===true ? "text" : "password"}  placeholder='confirm password' />
+                <input type={flag===true ? "text" : "password"}  placeholder='confirm password' value={data.confirmPassword} onChange={(e)=> setdata({...data , confirmPassword:e.target.value})} />
                 {flag ===false ? (
             <Eye className="icon" size={18} onClick={(e)=>{
               setflag(true)
@@ -73,16 +133,16 @@ const Signup: React.FC = () => {
                 <div className="down" id='inp'>
                 <div className="input-label">
                   <p>Enter your organization</p>
-                <input type="text" placeholder='organization name' />
+                <input type="text" placeholder='organization name' value={data.organization} onChange={(e)=> setdata({...data , organization:e.target.value})} />
                 </div>
                 <div className="input-label">
                   <p>Type of Work</p>
-                <input type="text" placeholder='Work Type' />
+                <input type="text" placeholder='Work Type' value={data.typeOfWork} onChange={(e)=> setdata({...data , typeOfWork:e.target.value})} />
                 </div>
                 </div>
                 <div className="new">
                 <div className="check">
-                  <input type="checkbox" />
+                  <input type="checkbox" onChange={(e) => setdata({ ...data, termsncontd: e.target.checked })}  />
                   <p>I have read and agreee all terms & conditions</p>
                </div>
                <div className="navi">
@@ -92,9 +152,10 @@ const Signup: React.FC = () => {
                 }}>Login</p> </p>
                </div>
                </div>
-            </div>
+            </div>  
+            <span className='error'>{error ? <ErrorOutlineIcon /> : ""} {error}</span>
             <div className="submit">
-              <button>create an account</button>
+              <button onClick={check}>create an account</button>
             </div>
         </div>
 
