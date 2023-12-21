@@ -8,6 +8,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { reducer } from './redux';
 import thunk from "redux-thunk";
+
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./theme/index.js";
+
 const store = createStore(reducer, compose(applyMiddleware(thunk)));
 
 const root = ReactDOM.createRoot(
@@ -17,7 +21,9 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
   <React.StrictMode>
+    <ChakraProvider theme={theme}>
     <App />
+    </ChakraProvider>
   </React.StrictMode>
   </Provider>
   </BrowserRouter>

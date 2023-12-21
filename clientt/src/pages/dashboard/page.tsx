@@ -52,7 +52,6 @@ const Dashboard: React.FC = () => {
     );
     const Extracted_Object: DashboardIdx | null = DashboardIndex ? JSON.parse(DashboardIndex) : null
     if (!Extracted_Object) {
-      alert("hello")
       const temp: DashboardIdx={
         flag: 0
       };

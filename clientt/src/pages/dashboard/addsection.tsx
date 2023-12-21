@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import '../../scss/dashboard/addsection.scss'
 import { Menu } from 'lucide-react'
 import { Sections } from '../../interface/interface'
+
+import { Text , Button } from '@chakra-ui/react'
 const Addsection: React.FC = () => {
 
   const [section, setSection] = useState<Sections>({
@@ -25,11 +27,11 @@ const Addsection: React.FC = () => {
   return (
     <div className="addsection">
       <div className="head">
-        <div className="left">
+        <div className="">
         {window.innerWidth < 810 && (
             <Menu size={23}/>
           )}
-        <h2>Add new Section</h2>
+        <Text fontSize="1.3rem" fontWeight={600} as="h2">Add new Section</Text>
         </div>
         <button className='btn' onClick={(e)=>{
           e.preventDefault()

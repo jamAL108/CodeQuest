@@ -4,7 +4,7 @@ const initialstate ={
     signuperror:"",
     loginerror:"",
     email:"",
-    sections:""
+    sections:[]
 }
 
 const props =(state=initialstate , action) =>{

@@ -25,12 +25,12 @@
   z-index: 0;
 }
 .Homeask .left input:focus {
-  height: calc(100% - 4px);
+  /* height: calc(100% - 4px); */
   border: 2px solid #0070f3;
 }
 
 .Homeask .left button {
-  height: calc(100% + 2px);
+  height: 100%;
   width: 40%;
   border: none;
   background-color: #753fc8;

@@ -53,7 +53,7 @@ export const Login = async (req, res) => {
     console.log(token)
     res.cookie("token", token, {
       expiresIn: "1d",
-      httpOnly: true
+      // httpOnly: true
     });
           // secure: true,
       // withCredentials: true,
@@ -111,7 +111,7 @@ export const fetchSection = async (req, res) => {
       await userSection.save()
       return res.status(201).send({message:"User sections created" , data:[]})
     }
-    return res.status(200).send({message:"use sections fetched" , data:user_sections})
+    return res.status(200).send({message:"use sections fetched" , data:user_sections.Sections})
   } catch (err) {
     console.log(err);
     return res.status(404).send({ error: err });

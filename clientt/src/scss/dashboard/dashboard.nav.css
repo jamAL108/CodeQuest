@@ -17,12 +17,14 @@
     align-items: flex-start;
     justify-content: flex-start;
 }
+
 .DashNav .up .left{
     width: 70%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
+
 .DashNav .up .left img{
     width: 20%;
     height: 90%;
@@ -67,12 +69,13 @@ opacity: 0.9;
 .DashNav .down{
     width: 100%;
     height: 10rem;
-    margin-top: -0.3rem;
+    /* margin-top: -0.3rem; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
+
 
 .DashNav .down .covertop{
     /* width: 72%; */

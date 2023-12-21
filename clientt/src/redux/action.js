@@ -1,5 +1,5 @@
 import * as action from "./actionTypes.js";
-
+import Data from "../pages/dashboard/data.js";
 const URL = "http://localhost:8000/api";
 const Origin = "http://localhost:3000";
 
@@ -93,8 +93,8 @@ export const fetchSections = (formdata) => async (dispatch) => {
     });
     const msg = await data.json();
     if (data.status === 200) {
-      console.log(msg.data)
-      dispatch({type:action.SECTIONS , payload:msg.data})
+      console.log(Data)
+      dispatch({type:action.SECTIONS , payload:Data})
     } else {
       console.log(msg);
     }
