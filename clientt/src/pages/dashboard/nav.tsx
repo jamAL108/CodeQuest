@@ -26,13 +26,14 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  CloseButton,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 
 const Nav: React.FC<dashboardNavProps> = (props) => {
-  const { flagfun, flag } = props;
+  const { flagfun, flag , navshow , navchange} = props;
   const Data: string | null = localStorage.getItem("codeQuestUSER");
   const user: user | null = Data ? JSON.parse(Data) : null;
   const dropdown = useRef<HTMLButtonElement  | null>(null)
@@ -77,35 +78,45 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
     };
   }, []);
 
-
-
-
   return (
+
     <Flex
       color="accent.light"
-      className="DashNav"
-      width="20%"
-      bg="Bgs.nav"
+      width={{base:"100%",md:"20%"}}
+      height='100%'
+      bg="#1C1C24"
       direction="column"
-      position="relative"
+      position={{base:"absolute",md:"relative"}}
+      transform={window.innerWidth>769 ? "translateX(0%)" : navshow===false ? "translateX(-100%)" : "translateX(0%)"}
+      transition='0.5s ease-in-out'
       justify="flex-start"
       gap="1.3rem"
+      zIndex={100}
     >
+
       <Grid
-        h="3rem"
+        h={{base:"10%",md:"3rem"}}
         mt="1.3rem"
         templateColumns="70% 30%"
         justifyContent="center"
         alignItems="center"
       >
-        <Center h="full">
+        <Center h={{base:"70%",md:"full"}} pr={{base:"60px",md:"auto"}} >
           <Image w="20%" h="90%" src={Logo} alt="bf" />
-          <Text as="h2" fontSize="1.08rem" fontWeight="460" opacity="0.9">
+          <Text as="h2" fontSize={{base:"1.2rem",md:"1.08rem"}} fontWeight="460" opacity="0.9">
             codeQuest
           </Text>
         </Center>
-        <Center h="full" pr="20px">
+        <Center h="full" pr={{base:"0",md:"20px"}}>
+          {navshow===false ? (
           <AlignRight className="icon" color="white" size={20} />
+          ):(
+            <CloseButton size='20' onClick={(e)=>{
+              e.preventDefault()
+              e.stopPropagation()
+              navchange(false)
+            }} />
+          )}
         </Center>
       </Grid>
 
@@ -113,7 +124,7 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
         px="3px"
         w="100%"
         flexDirection="column"
-        fontSize="0.7rem"
+        fontSize={{base:"0.9rem",md:"0.7rem"}}
         opacity={0.9}
         fontWeight={330}
       >
@@ -126,15 +137,14 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
       </Center>
 
       <Flex
-        className="down"
-        minH="10rem"
+        minH={{base:"40%",md:"10rem"}}
         justify="flex-start"
+        align='center'
         direction="column"
       >
         <Center
-          className="covertop"
-          h="32%"
-          w="11.5rem"
+          h={{base:"25%",md:"32%"}}
+          w={{base:"85%",md:"11.5rem"}}
           borderRadius={6}
           border={flag === 2 ? "1px solid #6F8AE9" : "none"}
         >
@@ -146,6 +156,7 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
             alignItems="center"
             justifyContent="center"
             width="96%"
+            height={{base:"60%",md:"auto"}}
             py={2}
             gap="10px"
             borderRadius="4px"
@@ -154,6 +165,8 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
             _hover={{ transform: "scale(1.04)" }}
             onClick={(e) => {
               e.preventDefault();
+              e.stopPropagation()
+              navchange(false)
               flagfun("addsection");
             }}
           >
@@ -173,12 +186,11 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
           </Box>
         </Center>
 
-        <Divider my={3} bg="#23232B" w="70%" opacity={0.4} />
+        <Divider my={3} bg="#23232B" w={{base:"85%",md:"70%"}} opacity={0.4} />
 
-        <Flex className="bottom" w="70%" h="52%" justify="content" gap="10%">
+        <Flex marginTop={{base:"20px",md:'auto'}} w={{base:'85%',md:"70%"}} h={{base:"34%",md:"52%"}} justify="space-around" gap="10%">
           <Box
-            className="dash"
-            w="4.1rem"
+            w={{base:"6rem",md:"4.1rem"}}
             display="flex"
             flexDirection="column"
             justifyItems="flex-start"
@@ -187,6 +199,8 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
             cursor="pointer"
             onClick={(e) => {
               e.preventDefault();
+              e.stopPropagation()
+              navchange(false)
               flagfun("activities");
             }}
           >
@@ -200,6 +214,7 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
               <Center
                 h="86%"
                 w="86%"
+                fontSize='2rem'
                 backgroundColor={flag === 0 ? "#6F8AE9" : "#282833"}
                 borderRadius={4}
                 transition="0.3s ease"
@@ -223,8 +238,7 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
           </Box>
 
           <Box
-            className="dash"
-            w="4.1rem"
+            w={{base:"6rem",md:"4.1rem"}}
             display="flex"
             flexDirection="column"
             justifyItems="flex-start"
@@ -233,6 +247,8 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
             cursor="pointer"
             onClick={(e) => {
               e.preventDefault();
+              e.stopPropagation()
+              navchange(false)
               flagfun("settings");
             }}
           >
@@ -269,7 +285,7 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
         </Flex>
       </Flex>
 
-      <Center position="absolute" w="100%" bottom={0} h="4rem" cursor="pointer">
+      <Center position="absolute" w="100%" bottom={{base:"5",md:"0"}} h={{base:"5rem",md:"4rem"}} cursor="pointer">
         <Grid 
           pr={4}
           pl={3}
@@ -308,11 +324,11 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
             align="flex-start"
             gap={0}
           >
-            <Text as="h2" fontSize="0.7rem" m={0} fontWeight={520}>
+            <Text as="h2" fontSize={{base:"0.85rem",md:"0.7rem"}} m={0} fontWeight={520}>
               {user?.firstName} {user?.lastName}
             </Text>
 
-            <Text as="p" fontSize="0.53rem" m={0} opacity={0.7}>
+            <Text as="p" fontSize={{base:"0.7rem",md:"0.53rem"}} m={0} opacity={0.7}>
               jamalmohideen971@gmail.com
             </Text>
           </Flex>
@@ -321,21 +337,25 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
         <Menu>
           <MenuButton w="85%"  ref={dropdown}
           h="80%"></MenuButton>
-          <MenuList minW='0'  fontFamily='Poppins , sans-serif'  maxW='calc(100vw - 80vw)' w='calc(100vw - 80vw - 3vw)' bg="#282833" border="none">
-            <MenuItem h='2.9rem' bg="#282833" _hover={{bg:"#202123"}} gap='15px'
+          <MenuList minW='0'  fontFamily='Poppins , sans-serif'  maxW={{base:'100vw', md:'calc(100vw - 80vw)'}} w={{base:"calc(100vw - 15vw)" , md:'calc(100vw - 80vw - 3vw)'}} bg="#282833" border="none">
+            <MenuItem h={{base:"3.5rem",md:'2.9rem'}} bg="#282833" _hover={{bg:"#202123"}} gap='15px'
              display='flex' justifyContent='center' alignItems='center'>
                <LogOut size={16} />
-             <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='75%'>Log out</Text></MenuItem>
+             <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='80%'>Log out</Text></MenuItem>
 
-            <MenuItem h='2.9rem' bg="#282833" _hover={{bg:"#202123"}} gap='15px'
-             display='flex' justifyContent='center' borderBottom='1px solid rgba(255, 255, 255, 0.2)'  alignItems='center' >
+            <MenuItem h={{base:"3.5rem",md:'2.9rem'}} bg="#282833" _hover={{bg:"#202123"}} gap='15px'
+             display='flex' justifyContent='center' borderBottom='1px solid rgba(255, 255, 255, 0.2)'  alignItems='center'     
+              onClick={(e) => {
+              e.preventDefault();
+              flagfun("settings");
+            }} >
                <Settings size={16} />
-             <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='75%'>Settings</Text></MenuItem>
+             <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='80%'>Settings</Text></MenuItem>
 
-            <MenuItem h='2.9rem' bg="#282833" _hover={{bg:"#202123"}} gap='15px'
+            <MenuItem h={{base:"3.5rem",md:'2.9rem'}} bg="#282833" _hover={{bg:"#202123"}} gap='15px'
              display='flex' justifyContent='center' alignItems='center'  >
               <LogOut size={16} />
-              <Text textAlign='left' fontSize='0.8rem' fontWeight='240' width='75%' onClick={Logout}>Log out</Text>
+              <Text textAlign='left' fontSize='0.8rem' fontWeight='240' width='80%' onClick={Logout}>Log out</Text>
             </MenuItem>
 
           </MenuList>

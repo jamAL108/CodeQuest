@@ -26,7 +26,9 @@ export interface user{
 
 export interface dashboardNavProps{
     flagfun: (arg: string) => void,
-    flag:number
+    flag:number,
+    navshow:boolean,
+    navchange: (flag:boolean) => void,
 }
 
 export interface DashboardIdx{

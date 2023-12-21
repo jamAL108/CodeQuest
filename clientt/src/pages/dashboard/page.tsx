@@ -16,6 +16,8 @@ const Dashboard: React.FC = () => {
   const dispatch: Dispatch<any> = useDispatch();
   const [cookies, removeCookie] = useCookies([]);
 
+  const [navshow,setnavshow] = useState<boolean>(false)
+
   useEffect(() => {
     function handleResize() {
       window.location.reload();
@@ -78,10 +80,14 @@ const Dashboard: React.FC = () => {
     localStorage.setItem("codeQuestDashboardIndex", JSON.stringify(temp));
   };
 
+  const navchange = (flag:boolean)=>{
+    setnavshow(flag)
+  }
+
   return (
     <div className="dashboard">
-      <Nav flagfun={flagchange} flag={flag} />
-      {flag === 0 && <Activities />}
+      <Nav flagfun={flagchange} flag={flag} navshow={navshow} navchange={navchange} />
+      {flag === 0 && <Activities flagfun={flagchange} flag={flag} navshow={navshow} navchange={navchange} />}
       {flag === 1 && <Settings />}
       {flag===2 && <Addsection/>}
     </div>

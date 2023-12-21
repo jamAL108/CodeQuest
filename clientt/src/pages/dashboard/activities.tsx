@@ -19,8 +19,9 @@ import {
   Show,
   Input
 } from "@chakra-ui/react";
-
-const Activities = () => {
+import {  dashboardNavProps } from "../../interface/interface";
+const Activities: React.FC<dashboardNavProps> = (props) => {
+  const { flagfun, flag , navshow , navchange} = props;
   const dispatch: Dispatch<any> = useDispatch();
   const [data, setdata] = useState<Sections[]>([]);
   const store = useSelector((state: RootState) => state);
@@ -144,7 +145,11 @@ const Activities = () => {
       >
         <Flex gap={2} align="center">
           <Show below="786px">
-            <Menu size={23} />
+            <Menu size={23} onClick={(e)=>{
+              e.preventDefault()
+              e.stopPropagation()
+              navchange(true)
+            }} />
           </Show>
           <Text fontSize="1.34rem" fontWeight={600} as="h2">
             Dashboard
@@ -433,7 +438,7 @@ const Activities = () => {
             <div className="Tablemain">
               {datatoshow && datatoshow.length !== 0 ? (
                 datatoshow?.slice(page*itemsPerPage-itemsPerPage , page*itemsPerPage).map((item, idx) => (
-                  <div className="box">
+                  <div className="box" key={idx}>
                     <div className="name" id="col">
                       <p>{item?.name}</p>
                     </div>
@@ -502,17 +507,15 @@ const Activities = () => {
           <Flex justify='center' align='center' w='120px' h='70%' gap='10px' >
           
           
-          <Center ref={box1} w='26px' h='77%'  borderRadius='4px' fontSize='0.7rem'>{page===1 ? 1 : 
+          <Center ref={box1} w='26px' h='77%' pointerEvents='none'  borderRadius='4px' fontSize='0.7rem' onClick={(e)=>e.stopPropagation()}>{page===1 ? 1 : 
           totalpage==2 ? 1 : page===totalpage ? page - 2 : page - 1}
           </Center>
 
-          <Center ref={box2} w='26px' h='77%' opacity={totalpage===1 ? "0.3" : 1}  
-          onClick={handlenext}
-          pointerEvents={totalpage===1 ? "none" : "auto"} borderRadius='4px' fontSize='0.75rem'>{totalpage==1 ? "X" : page=== 1 ? page+1 : totalpage==2 ? page :  page===totalpage ? page-1  : page }</Center>
+          <Center ref={box2} w='26px' h='77%' pointerEvents='none' opacity={totalpage===1 ? "0.3" : 1}  
+          onClick={(e)=>e.stopPropagation()} borderRadius='4px' fontSize='0.75rem'  >{totalpage==1 ? "X" : page=== 1 ? page+1 : totalpage==2 ? page :  page===totalpage ? page-1  : page }</Center>
 
-          <Center ref={box3} w='26px' h='77%' opacity={totalpage===2 || totalpage===1  ? "0.3" : 1}  
-          onClick={handlenext}
-          pointerEvents={totalpage===2 || totalpage===1  ? "none" : "auto"} borderRadius='4px' fontSize='0.7rem'>{totalpage==2 || totalpage===1 ? "X" :  page===totalpage ? page : page===1 ? page+2 : page+1}</Center>
+          <Center ref={box3} w='26px' h='77%' pointerEvents='none' opacity={totalpage===2 || totalpage===1  ? "0.3" : 1}  
+          onClick={(e)=>e.stopPropagation()} borderRadius='4px' fontSize='0.7rem'   >{totalpage==2 || totalpage===1 ? "X" :  page===totalpage ? page : page===1 ? page+2 : page+1}</Center>
 
 
           </Flex>
