@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { useCookies } from "react-cookie";
 import { DashboardIdx } from "../../interface/interface";
 import Addsection from "./addsection";
+import { Flex } from "@chakra-ui/react";
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -85,12 +86,12 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="dashboard">
+    <Flex w='100vw' h='100vh' overflow='hidden' fontFamily='Poppins , sans-serif' className="dashboard">
       <Nav flagfun={flagchange} flag={flag} navshow={navshow} navchange={navchange} />
       {flag === 0 && <Activities flagfun={flagchange} flag={flag} navshow={navshow} navchange={navchange} />}
       {flag === 1 && <Settings />}
       {flag===2 && <Addsection/>}
-    </div>
+    </Flex>
   );
 };
 
