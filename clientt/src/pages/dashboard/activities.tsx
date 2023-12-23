@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../../scss/dashboard/activities.scss";
 import { RootState } from "../../redux";
-import { motion, useReducedMotion } from "framer-motion";
+// import { motion, useReducedMotion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import { fetchSections } from "../../redux/action";
@@ -15,7 +15,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { user, Sections } from "../../interface/interface";
-import Data from "./data";
 import WarningIcon from "@mui/icons-material/Warning";
 import {
   Button,
@@ -28,8 +27,10 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { dashboardNavProps } from "../../interface/interface";
+
+
 const Activities: React.FC<dashboardNavProps> = (props) => {
-  const { flagfun, flag, navshow, navchange } = props;
+  const { navchange } = props;
   const dispatch: Dispatch<any> = useDispatch();
   const [data, setdata] = useState<Sections[]>([]);
   const store = useSelector((state: RootState) => state);
@@ -43,6 +44,7 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
   const box1 = useRef<HTMLDivElement | null>(null);
   const box2 = useRef<HTMLDivElement | null>(null);
   const box3 = useRef<HTMLDivElement | null>(null);
+  const [completed , setcompleted] = useState<number>(0)
 
   useEffect(() => {
     const user_string: string | null = localStorage.getItem("codeQuestUSER");
@@ -58,7 +60,14 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
       setdata(store.user.sections);
       setdatatoshow(store.user.sections);
     }
-  }, [store?.user?.sections]);
+  }, [store?.user?.sections])
+
+  useEffect(()=>{
+    if(data.length!==0){
+      const completedCount = data?.filter(item => item.status === true).length;
+      setcompleted(completedCount)
+    }
+  },[data])
 
   useEffect(() => {
     if (navitem === 0 && datatoshow.length !== data.length) {
@@ -215,7 +224,7 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
             fontSize={{ base: "1.72rem", md: "1.6rem" }}
             fontWeight={500}
           >
-            123
+            {data.length}
           </Text>
         </Flex>
 
@@ -283,7 +292,7 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
               fontSize="1.6rem"
               fontWeight={500}
             >
-              34
+              {completed}
             </Text>
           </Flex>
           <Flex
@@ -308,7 +317,7 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
               fontSize="1.6rem"
               fontWeight={500}
             >
-              45
+              {data.length - completed}
             </Text>
           </Flex>
         </Box>
@@ -608,8 +617,8 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
                   )
                   .map((item, idx) => (
                     <Flex
-                    borderBottom='2px solid #38383d'
-                      w="full"
+                      borderBottom='2px solid #38383d'
+                      w={{md:"full"}}
                       h={{base:"4.5rem",md:"3.6rem"}}
                       justify="flex-start"
                       fontSize="0.76rem"
@@ -705,7 +714,7 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
                       <Flex
                         w="8%"
                         h="full"
-                        justify="flex-start"
+                        justify={{base:"center",md:"flex-start"}}
                         align="center"
                         id="col"
                         minW={{base:"50px",md:"8%"}}
@@ -715,27 +724,30 @@ const Activities: React.FC<dashboardNavProps> = (props) => {
                     </Flex>
                   ))
               ) : (
-                <div className="no_section">
-                  <WarningIcon className="icon" />
-                  <h2> No Section Found</h2>
+
+                <Center w='60%' h='90%' flexDirection='column' gap='10px' m='auto'>
+                  <WarningIcon className="icon" style={{fontSize:"3rem" ,opacity:0.6}}  />
+                  <Text as='h2' fontSize={{base:"0.95rem",md:'1.1rem'}} fontWeight={500} m={0} > No Section Found</Text>
                   <Button
                     color="button.color"
                     variant="solid"
                     bg="button.bg"
-                    px={2}
+                    px={{base:1,md:2}}
                     py={0}
-                    h={37}
+                    h={{base:30,md:37}}
                     borderRadius={5}
                     transition="0.4s ease-in-out"
-                    fontSize="0.9rem"
+                    fontSize={{base:"0.8rem",md:"0.9rem"}}
                     _hover={{ bg: "button.hover" }}
                     gap={1}
                   >
                     <Plus color="#202029" size={19} />
                     Add new Section
                   </Button>
-                </div>
+                </Center>
+
               )}
+
             </Box>
           </Flex>
         </Flex>

@@ -44,3 +44,9 @@ export  interface Sections{
     description:string,
     content?:[]
 }
+
+export interface SettingsInput{
+    text:string,
+    readonly:boolean,
+    
+}

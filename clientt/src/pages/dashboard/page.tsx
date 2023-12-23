@@ -89,7 +89,7 @@ const Dashboard: React.FC = () => {
     <Flex w='100vw' h='100vh' overflow='hidden' fontFamily='Poppins , sans-serif' className="dashboard">
       <Nav flagfun={flagchange} flag={flag} navshow={navshow} navchange={navchange} />
       {flag === 0 && <Activities flagfun={flagchange} flag={flag} navshow={navshow} navchange={navchange} />}
-      {flag === 1 && <Settings />}
+      {flag === 1 && <Settings flagfun={flagchange} flag={flag} navshow={navshow} navchange={navchange} />}
       {flag===2 && <Addsection/>}
     </Flex>
   );

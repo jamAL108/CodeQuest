@@ -1,51 +1,56 @@
 import React, { useState } from "react";
-import "../../scss/dashboard/settings.scss";
-import { LogOut } from "lucide-react";
-import { motion } from "framer-motion";
+import { LogOut ,Menu } from "lucide-react";
+// import { motion } from "framer-motion";
 import { user } from "../../interface/interface";
-import { Text, Button, Box , Divider , Input} from "@chakra-ui/react";
-const Settings = () => {
+import { Text, Button, Box , Divider ,Flex , Show} from "@chakra-ui/react";
+import { dashboardNavProps } from '../../interface/interface'
+
+const Settings: React.FC<dashboardNavProps> = (props) => {
+  const { navchange } = props;
   const Data: string | null = localStorage.getItem("codeQuestUSER");
   const userdata: user | null = Data ? JSON.parse(Data) : null;
-  console.log(userdata);
   const [user, setuser] = useState<user | null>(userdata);
 
   const [useredit, setuseredit] = useState<user | null>(user);
 
-  console.log(useredit);
 
+  const inputStyles = {
+    backgroundColor: "transparent",
+    width: "90%",
+    height: "40%",
+    border: "2px solid rgba(209, 203, 203, 0.3)",
+    outline: "none",
+    borderRadius: "5px",
+    fontSize:"0.822rem",
+    color: "white",
+    paddingLeft: "8px",
+    filter: "brightness(1.5)",
+  };
   return (
-    <div className="setting">
-      {/* <motion.div
-        className="upper"
-        initial={{ scale: 0, opacity: 0 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ type: "tween" }}
-      >
-        <Text fontSize="1.3rem" fontWeight={600} as="h2">
-          Settings
-        </Text>
-        <div className="btn">
-          logout <LogOut size={17} />
-        </div>
-      </motion.div> */}
+    <Flex w={{base:'100%',md:'80%'}} h='100vh' bg='#202029' color='white' borderLeft='1px solid #23232b' justify='flex-start' align='center' direction='column'  className="setting">
 
       <Box 
            display="flex" 
            justifyContent="space-between" 
            alignItems="center"
            w="92%"
-           height="5rem"
+           height={{base:'5.5rem',md:"5rem"}}
            >
-         <Text fontSize="1.3rem" color="white" fontWeight={600} as="h2">
-          Settings
-        </Text>
-
-        {/* <div className="btn">
-          logout <LogOut size={17} />
-        </div> */}
-
+                <Flex gap={2} align="center">
+          <Show below="786px">
+            <Menu
+              size={23}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navchange(true);
+              }}
+            />
+          </Show>
+          <Text fontSize="1.3rem" letterSpacing='1px' fontWeight={600} as="h2">
+            Settings
+          </Text>
+        </Flex>
         <Button
             variant="solid"
             px={5}
@@ -64,14 +69,6 @@ const Settings = () => {
 
 
       </Box>
-
-      {/* <motion.div
-        className="line"
-        initial={{ scale: 0, opacity: 0 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 0.2, scale: 1 }}
-        transition={{ type: "tween" }}
-      ></motion.div> */}
 
      <Divider w="94%" border="1px solid #ffffff" opacity={0.2}/>
 
@@ -100,31 +97,30 @@ const Settings = () => {
           </Button>
         </Box>
 
-        {/* <div className="form"> */}
           
           <Box 
-          marginTop="15px"
+          marginTop={{base:"25px",md:"15px"}}
           w="full"
           h="auto"
-          display="grid"
-          gridAutoRows="auto 1fr auto"
-          gap="30px"
+          display={{base:"flex",md:"grid"}}
+          flexDirection='column'
+          gridAutoRows={{base:"none",md:"auto 1fr auto"}}
+          gap={{base:"13px",md:"21px"}}
           >
-{/* 
-          <div style={{ gridRow: "1" }} id="child"> */}
 
-           <Box 
-            gridRow={1}
+           <Flex 
+           w='full' h='5.5rem'  justify='flex-start' align='center' gap={{base:"20px",md:'30px'}} 
+            gridRow={{base:"none",md:1}}
             id="child"
            >
-            <div className="input-section">
-              <p>First Name</p>
-              {/* <input
+            <Flex justify='center' h='full' w={{base:"46%",md:'270px'}} align='flex-start' direction='column' gap='7px'>
+              <Text m={0}  fontSize='0.73rem' fontWeight={500} >First Name</Text>
+              <input
                 type="text"
                 style={
                   useredit?.firstName !== user?.firstName
-                    ? { border: "2px solid #6a8de1" }
-                    : { border: "2px solid rgba(209, 203, 203, 0.3)" }
+                  ? {...inputStyles , border: "2px solid #6a8de1" }
+                  : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
                 }
                 value={useredit?.firstName}
                 onChange={(e) => {
@@ -132,28 +128,20 @@ const Settings = () => {
                     setuseredit({ ...useredit, firstName: e.target.value });
                   }
                 }}
-              /> */}
-             <Input variant='outline' placeholder='Enter Your firstName'
-             border={ 
-              useredit?.firstName !== user?.firstName
-              ? { border: "2px solid #6a8de1" }
-              : { border: "2px solid rgba(209, 203, 203, 0.3)" }
-            }
-              value={useredit?.firstName}
-                onChange={(e) => {
-                  if (useredit) {
-                    setuseredit({ ...useredit, firstName: e.target.value });
-                  }
-                }} />
-            </div>
-            <div className="input-section">
-              <p>Last Name</p>
-              <input
+              />
+
+            </Flex>
+
+
+
+ 
+            <Flex justify='center' h='full' w={{base:"46%",md:'270px'}}  align='flex-start' direction='column' gap='7px'>
+              <Text m={0}  fontSize='0.73rem' fontWeight={500} >Last Name</Text>
+              <input 
                 type="text"
-                style={
-                  useredit?.lastName !== user?.lastName
-                    ? { border: "2px solid #6a8de1" }
-                    : { border: "2px solid rgba(209, 203, 203, 0.3)" }
+style={  useredit?.lastName !== user?.lastName
+                    ? {...inputStyles , border: "2px solid #6a8de1" }
+                    : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
                 }
                 value={useredit?.lastName}
                 onChange={(e) => {
@@ -162,24 +150,27 @@ const Settings = () => {
                   }
                 }}
               />
-            </div>
-            </Box>
+
+            </Flex>
+
+            </Flex>
 
 
-          <Box           
-            gridRow={2}
+
+          <Flex       
+          w='full' h={{base:'5.5rem',md:'5.5rem'}} gap={{base:"20px",md:'30px'}} flexWrap='wrap' justify='flex-start' align='center'  
+          gridRow={{base:"none",md:2}}
             id="child">
-            <div className="input-section">
-              <p>Email ID</p>
+
+            <Flex justify='center' h='full' w={{base:"46%",md:'270px'}} align='flex-start' direction='column' gap='7px'>
+             <Text m={0}  fontSize='0.73rem' fontWeight={500} >Email</Text>
               <input
                 type="text"
                 style={
                   useredit?.email !== user?.email
-                    ? { border: "2px solid #6a8de1" }
-                    : { border: "2px solid rgba(209, 203, 203, 0.3)" }
+                  ? {...inputStyles , border: "2px solid #6a8de1" }
+                  : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
                 }
-                className="readonly"
-                readOnly
                 value={useredit?.email}
                 onChange={(e) => {
                   if (useredit) {
@@ -187,15 +178,16 @@ const Settings = () => {
                   }
                 }}
               />
-            </div>
-            <div className="input-section">
-              <p>password</p>
+            </Flex>
+
+            <Flex justify='center' h='full' w={{base:"46%",md:'270px'}}  align='flex-start' direction='column' gap='7px'>
+              <Text m={0}  fontSize='0.73rem' fontWeight={500} >Password</Text>
               <input
                 type="text"
                 style={
                   useredit?.password !== user?.password
-                    ? { border: "2px solid #6a8de1" }
-                    : { border: "2px solid rgba(209, 203, 203, 0.3)" }
+                  ? {...inputStyles , border: "2px solid #6a8de1" }
+                  : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
                 }
                 value={useredit?.password}
                 onChange={(e) => {
@@ -204,18 +196,17 @@ const Settings = () => {
                   }
                 }}
               />
-            </div>
-            <div className="input-section">
-              <p>confirm password</p>
+            </Flex>
+
+            <Flex justify='center' h='full' w='270px' align='flex-start' direction='column' gap='7px'>
+              <Text m={0}  fontSize='0.73rem' fontWeight={500} >Confirm Password</Text>
               <input
                 type="text"
                 style={
                   useredit?.password !== user?.password
-                    ? { border: "2px solid #6a8de1" }
-                    : { border: "2px solid rgba(209, 203, 203, 0.3)" }
+                  ? {...inputStyles , border: "2px solid #6a8de1" }
+                  : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
                 }
-                className="readonly"
-                readOnly
                 value={useredit?.password}
                 onChange={(e) => {
                   if (useredit) {
@@ -223,22 +214,25 @@ const Settings = () => {
                   }
                 }}
               />
-            </div>
-          </Box>
+            </Flex>
+
+          </Flex>
 
 
-          <Box          
-             gridRow={3}
+          <Flex        
+          w='full'  marginTop={{base:"110px",md:"auto"}} h='5.5rem' gap={{base:"20px",md:'30px'}}   justify='flex-start' align='center'    
+          gridRow={{base:"none",md:3}}
             id="child"
             >
-            <div className="input-section">
-              <p>Organization</p>
+
+            <Flex h='full' w='270px' justify='center' align='flex-start' direction='column' gap='7px'>
+              <Text m={0}  fontSize='0.73rem' fontWeight={500} >organization</Text>
               <input
                 type="text"
                 style={
                   useredit?.organization !== user?.organization
-                    ? { border: "2px solid #6a8de1" }
-                    : { border: "2px solid rgba(209, 203, 203, 0.3)" }
+                  ? {...inputStyles , border: "2px solid #6a8de1" }
+                  : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
                 }
                 value={useredit?.organization}
                 onChange={(e) => {
@@ -247,15 +241,16 @@ const Settings = () => {
                   }
                 }}
               />
-            </div>
-            <div className="input-section">
-              <p>work type</p>
+            </Flex>
+
+            <Flex h='full' justify='center' w='270px' align='flex-start' direction='column' gap='7px'>
+              <Text m={0}  fontSize='0.73rem' fontWeight={500} >type Of Work</Text>
               <input
                 type="text"
                 style={
                   useredit?.typeOfWork !== user?.typeOfWork
-                    ? { border: "2px solid #6a8de1" }
-                    : { border: "2px solid rgba(209, 203, 203, 0.3)" }
+                  ? {...inputStyles , border: "2px solid #6a8de1" }
+                  : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
                 }
                 value={useredit?.typeOfWork}
                 onChange={(e) => {
@@ -264,13 +259,14 @@ const Settings = () => {
                   }
                 }}
               />
-            </div>
-          </Box>
+            </Flex>
+
+          </Flex>
 
 
           </Box>
         </Box>
-    </div>
+    </Flex>
   );
 };
 

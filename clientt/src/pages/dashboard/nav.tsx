@@ -189,8 +189,10 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
         <Divider my={3} bg="#23232B" w={{base:"85%",md:"70%"}} opacity={0.4} />
 
         <Flex marginTop={{base:"20px",md:'auto'}} w={{base:'85%',md:"70%"}} h={{base:"34%",md:"52%"}} justify="space-around" gap="10%">
+
           <Box
-            w={{base:"6rem",md:"4.1rem"}}
+            w={{base:"5.4rem",md:"4.2rem"}}
+            h={{base:"90%",md:"100%"}}
             display="flex"
             flexDirection="column"
             justifyItems="flex-start"
@@ -238,7 +240,8 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
           </Box>
 
           <Box
-            w={{base:"6rem",md:"4.1rem"}}
+            w={{base:"5.4rem",md:"4.2rem"}}
+            h={{base:"90%",md:"100%"}}
             display="flex"
             flexDirection="column"
             justifyItems="flex-start"
