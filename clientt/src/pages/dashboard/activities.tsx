@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import "../../scss/dashboard/activities.scss";
 import { RootState } from "../../redux";
 // import { motion, useReducedMotion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./nav";
 import HomeAsk from "./home.ask";
-import "../../scss/home/home.css";
 import Symbol from "../../images/symbol.png";
 import Kpmg from "../../images/kpmg.svg";
 import Homeback from "../../images/homeback.png";

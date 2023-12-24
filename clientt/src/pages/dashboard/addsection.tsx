@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import '../../scss/dashboard/addsection.scss'
+// import '../../scss/dashboard/addsection.scss'
 import { Menu } from 'lucide-react'
 import { Sections } from '../../interface/interface'
 

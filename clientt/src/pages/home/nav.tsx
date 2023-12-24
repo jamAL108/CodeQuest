@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../../scss/home/nav.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";

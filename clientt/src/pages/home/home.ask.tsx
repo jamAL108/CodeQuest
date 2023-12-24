@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import '../../scss/home/homeask.css'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Link, useNavigate } from 'react-router-dom';
 import { EMAIL } from '../../redux/actionTypes';
