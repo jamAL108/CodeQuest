@@ -1,0 +1,230 @@
+/* .DashNav{
+    width: 20%;
+    height: 100%;
+    background-color: #1C1C24;
+    border-right: 1px solid #23232B;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    user-select: none;
+}
+.DashNav .up{
+    margin-top:1.97rem;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.DashNav .up .left{
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.DashNav .up .left img{
+    width: 20%;
+    height: 90%;
+}
+.DashNav .up .left h2{
+    margin-top: 0.5rem;
+font-size: 1.08rem;
+color: white;
+font-weight: 460;
+opacity: 0.9;
+}
+.DashNav .up .right{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.DashNav .up .right .icon{
+    margin-left: 20px;
+}
+.DashNav .middle{
+    margin-top:1.2rem;
+    width: 100%;
+    height: 5rem;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.DashNav .middle p{
+    margin: 0;
+    width: 73%;
+    text-align: left;
+    font-size: 0.75rem;
+    opacity: 0.9;
+    font-weight: 330;
+}
+
+.DashNav .down{
+    width: 100%;
+    height: 10rem;
+    /* margin-top: -0.3rem; */
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.DashNav .down .covertop{
+    /* width: 72%; */
+    /* width: 11.5rem;
+    height: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.DashNav .down .top{
+    margin: 100px 0;
+    width: 96%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    background-color: #282833;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.67s ease;
+}
+.DashNav .down .top:hover{
+    transform: scale(1.04);
+    filter: brightness(1.1);
+}
+.DashNav .down .top .icon{
+    padding-left: 10px;
+}
+.DashNav .down .top h2{
+    font-size: 0.8rem;
+    opacity: 0.9;
+    font-weight: 470;
+}
+ */
+
+
+
+
+
+
+/* .DashNav .down .line{
+    margin: 0.8rem 0;
+    width:80%;
+    height: 3px;
+    background-color: #23232B;
+    filter: brightness(1.1);
+}
+.DashNav .down .bottom{
+    width: 70%;
+    height: 52%;
+    display: flex;
+    justify-content: space-around;
+    gap: 10%;
+}
+.DashNav .down .bottom .dash{
+    /* width: 38%; */
+    /* width: 4.1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.1rem;
+    cursor: pointer;
+}
+.DashNav .down .bottom .dash .upper{
+    height: 82% !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.DashNav .down .bottom .dash .upper .boxy{
+    height: 86% !important;
+    width: 86%;
+    background-color: #282833;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+.DashNav .down .bottom .dash h2{
+    margin: 0rem;
+    padding: 0;
+    color: white;
+    font-size: 0.67rem;
+    font-weight: 450;
+    height: 18%;
+}
+.DashNav .profile{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.DashNav .profile .cont{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    gap: 0.2rem;
+  margin-left: -25px;
+}
+.DashNav .profile .cont .user_cont{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.DashNav .profile .cont .user_cont .icon{
+    background-color:#282833 ;
+    border-radius: 50%;
+    padding:7px;
+}
+.DashNav .profile .cont .user{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.DashNav .profile .cont .user h2{
+    color: white;
+    font-size: 0.73rem;
+    margin: 0;
+    font-weight: 520;
+}
+
+.DashNav .profile .cont .user p{
+    color: white;
+    font-size: 0.57rem;
+    margin: 0;
+    opacity: 0.7;
+}  */
+
+
+/* @media  screen and (max-width:800px) {
+    .DashNav{
+        display: none;
+    }
+}   */

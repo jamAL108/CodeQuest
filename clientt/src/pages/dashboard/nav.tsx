@@ -101,7 +101,7 @@ const Nav: React.FC<dashboardNavProps> = (props) => {
         justifyContent="center"
         alignItems="center"
       >
-        <Center h={{base:"70%",md:"full"}} pr={{base:"60px",md:"auto"}} >
+        <Center h={{base:"70%",md:"full"}}  pr={{base:"60px",md:"0px"}} >
           <Image w="20%" h="90%" src={Logo} alt="bf" />
           <Text as="h2" fontSize={{base:"1.2rem",md:"1.08rem"}} fontWeight="460" opacity="0.9">
             codeQuest

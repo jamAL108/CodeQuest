@@ -4,6 +4,7 @@ import { RootState } from "../../redux";
 import { useSelector, useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import { fetchSections } from "../../redux/action";
+import '../../scss/dashboard/activities.scss'
 import {
   Search,
   ListFilter,

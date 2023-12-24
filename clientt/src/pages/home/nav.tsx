@@ -15,6 +15,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import '../../scss/home/nav.css'
+
 const Nav: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<any>(null);
   const open = Boolean(anchorEl);
@@ -71,6 +73,7 @@ const Nav: React.FC = () => {
           />
           <Text
             as="h2"
+            h='40%'
             color="accent.light"
             fontSize="1.35rem"
             fontWeight={550}

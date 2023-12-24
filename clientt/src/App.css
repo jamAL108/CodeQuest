@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Inter:wght@300&family=Open+Sans&family=Poppins&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica&family=Poppins:wght@400;600&family=Roboto&family=Roboto+Condensed&display=swap');
 body{
   margin: 0;
   padding: 0;
@@ -21,10 +21,4 @@ html{
 
 *::selection{
   background-color: #1E4273;
-}
-
-@font-face {
-  font-family: 'Cur';
-  src: url("fonts/FlyBoyBB.ttf");
-  font-display:block;
 }

@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica&family=Poppins:wght@400;600&family=Roboto&family=Roboto+Condensed&display=swap');
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    font-family: "Poppins",sans-serif;  
+}

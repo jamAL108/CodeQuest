@@ -49,6 +49,7 @@ const theme = extendTheme({
       //   },
       variants: {
         solid: {
+          h:'none',
           borderRadius: "none",
           bg: "none", // Use the custom background color for the solid variant
           color: "white", // Use the custom text color for the solid variant

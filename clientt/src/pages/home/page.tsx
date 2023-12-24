@@ -42,7 +42,6 @@ const Home: React.FC = () => {
   }, []);
   return (
     <Box
-      // className="main"
       color="accent.light"
       width="100%"
       height="auto"
