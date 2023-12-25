@@ -208,7 +208,7 @@ const Home: React.FC = () => {
         position="absolute"
         right={0}
         w={{base:'full',md:"350px"}}
-        h={{base:'50vh',md:"95vh"}}
+        h={{base:'50vh',md:'585px'}}
         top={{base:"-5rem",md:"1rem"}}
         transform={{base:'rotate(0deg)',md:'none'}}
         opacity={{base:'0.6',md:1}}
