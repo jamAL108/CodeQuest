@@ -59,6 +59,8 @@ const Nav: React.FC = () => {
       >
         <Box
           w={{base:"100%" , md:"30%"}}
+          marginLeft={{base:'35px',md:'0'}}
+          gap={{base:'5px',md:'0'}}
           height="full"
           display="flex"
           alignItems="center"

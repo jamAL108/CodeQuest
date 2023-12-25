@@ -100,7 +100,7 @@ const Signin = () => {
           <Flex
             w="auto"
             h="100%"
-            ml="25px"
+            ml={{base:'8px',md:"25px"}}
             justify="flex-start"
             align="center"
             gap="2px"
@@ -145,7 +145,7 @@ const Signin = () => {
           direction='column'
           gap="20px"
         >
-          <Flex position="relative" direction='column' w="73%" h="30%" gap='10px'>
+          <Flex position="relative" direction='column' w={{base:'90%',md:"73%"}} h="30%" gap='10px'>
             <Text as="p" m={0} fontSize="0.95rem" fontWeight={540}>
               Enter Your Email
             </Text>
@@ -158,7 +158,7 @@ const Signin = () => {
             />
           </Flex>
 
-          <Flex position="relative" direction='column' gap='10px' w="73%" h="30%" >
+          <Flex position="relative" direction='column' gap='10px' w={{base:'90%',md:"73%"}}  h="30%" >
             <Text as="p" m={0} fontSize="0.95rem" fontWeight={540}>
               Enter Your Password
             </Text>
