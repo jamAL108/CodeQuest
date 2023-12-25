@@ -171,7 +171,7 @@ const Signin = () => {
             />
             {flag === false ? (
               <Eye
-                className="icon"
+                className="eyeicon"
                 size={18}
                 onClick={(e) => {
                   setflag(true);
@@ -179,7 +179,7 @@ const Signin = () => {
               />
             ) : (
               <EyeOff
-                className="icon"
+                className="eyeicon"
                 size={18}
                 onClick={(e) => {
                   setflag(false);
