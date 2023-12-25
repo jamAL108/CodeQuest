@@ -55,7 +55,8 @@ export const Login = async (req, res) => {
       expiresIn: "1d",
       httpOnly: true,
       secure: true,
-      withCredentials: true,
+      sameSite: "none",
+      // withCredentials: true,
     });
       // withCredentials: true,
       // sameSite: "none",
