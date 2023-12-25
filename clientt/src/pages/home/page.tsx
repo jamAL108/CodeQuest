@@ -80,8 +80,8 @@ const Home: React.FC = () => {
       <Box 
         zIndex={1000}
         width={{base:'90%',md:"60%"}}
-        marginTop="calc(190px - 4.3rem)"
-        marginRight={{base:'0rem',md:"130px"}}
+        marginTop={{base:'calc(30vh - 4.3rem)' , md:"calc(190px - 4.3rem)"}}
+        marginLeft={{base:'0rem',md:"-150px"}}
         height={{base:'85vh',md:"600px"}}
         display="flex"
         gap={2}
@@ -138,6 +138,7 @@ const Home: React.FC = () => {
         >
           <Box width='95%' fontFamily="body">
             <Text
+              w={{base:'auto',md:'100%'}}
               as="h1"
               lineHeight="1.3"
               fontWeight={600}
