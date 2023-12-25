@@ -60,7 +60,7 @@ const Home: React.FC = () => {
       color="accent.light"
       width="100%"
       height="auto"
-      minH="100vh"
+      // maxH="100vh"
       bg="backG.home"
       overflowY="scroll"
       overflowX="hidden"
@@ -80,12 +80,14 @@ const Home: React.FC = () => {
       <Box 
         zIndex={1000}
         width={{base:'90%',md:"60%"}}
-        marginTop="calc(30vh - 4.3rem)"
-        marginRight={{base:'0rem',md:"10rem"}}
-        height={{base:'85vh',md:"74vh"}}
+        marginTop="calc(190px - 4.3rem)"
+        marginRight={{base:'0rem',md:"130px"}}
+        height={{base:'85vh',md:"600px"}}
         display="flex"
         gap={2}
       >
+
+
         <Box
           width="3%"
           height="full"
@@ -103,7 +105,7 @@ const Home: React.FC = () => {
 
           <Box
             width={{base:'2px',md:"3px"}}
-            height={{base:'65%',md:"55%"}}
+            height={{base:'65%',md:"300px"}}
             bg="linear-gradient(transparent, #7c72ff 30%)"
           ></Box>
 
@@ -121,7 +123,7 @@ const Home: React.FC = () => {
 
           <Box
             width={{base:'2px',md:"3px"}}
-            height={{base:'65%',md:"55%"}}
+            height={{base:'65%',md:"320px"}}
             bg="linear-gradient(#7c72ff, #2da44e 80%, #3fb950)"
           ></Box>
         </Box>
@@ -205,7 +207,7 @@ const Home: React.FC = () => {
         zIndex={0}
         position="absolute"
         right={0}
-        w={{base:'full',md:"30vw"}}
+        w={{base:'full',md:"350px"}}
         h={{base:'50vh',md:"95vh"}}
         top={{base:"-5rem",md:"1rem"}}
         transform={{base:'rotate(0deg)',md:'none'}}
