@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
-import { X } from "lucide-react";
+import { X  } from "lucide-react";
 import Logo from "../../images/mainlogog.png";
 import { useNavigate } from "react-router-dom";
 import {
@@ -20,11 +20,13 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-
+import Other_product from './other_product'
 import "../../scss/home/nav.css";
+import OtherProductData from './data'
 
 const Nav: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<any>(null);
+  const dummyy = ["Pricing Policy",'Cookies Policy','terms & conditions','Meet The Creators']
   const open = Boolean(anchorEl);
   const handleClick: React.MouseEventHandler<HTMLHeadingElement> = (event) => {
     setAnchorEl(event.currentTarget);
@@ -272,13 +274,46 @@ const Nav: React.FC = () => {
                     <AccordionButton minH="50px" _hover={{bg:'white'}} 
                     _focus={{bg:'white'}}>
                       <Box as="span" flex="1" marginLeft='-1rem' textAlign="left">
-                        Section 1 title
+                        Others
                       </Box>
                       <AccordionIcon marginRight='-1rem' />
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4}>
-                   
+                    {dummyy.map((item,key)=>(
+                         <Text
+                         key={key}
+                          as="h2"
+                          h="45px"
+                          w="100%"
+                          fontSize='1rem'
+                          display='flex'
+                          justifyContent='flex-start'
+                          alignItems='center'
+                          className="btn"
+                         >
+                        {item}
+                     </Text>
+                    ))}
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
+
+              <Accordion allowToggle  w="100%">
+                <AccordionItem borderTop='none' borderBottom='none'>
+                  <h2>
+                    <AccordionButton minH="50px" _hover={{bg:'white'}} 
+                    _focus={{bg:'white'}}>
+                      <Box as="span" flex="1" marginLeft='-1rem' textAlign="left">
+                        Other Products
+                      </Box>
+                      <AccordionIcon marginRight='-1rem' />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    {OtherProductData.map((item,key)=>(
+                      <Other_product icony={item.icony} name={item.name} description={item.description} link={item.link}/>
+                    ))}
                   </AccordionPanel>
                 </AccordionItem>
               </Accordion>

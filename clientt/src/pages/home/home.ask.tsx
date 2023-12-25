@@ -5,6 +5,7 @@ import { EMAIL } from '../../redux/actionTypes';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import { Box , Button , Text  ,  Flex , Input } from '@chakra-ui/react';
+
 const  HomeAsk = () => {
   const [email,setemail] =useState("")
   const dispatch: Dispatch<any> = useDispatch()

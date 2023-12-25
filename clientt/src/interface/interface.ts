@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export interface signupInterface{
     firstName:string,
     lastName:string,
@@ -49,4 +51,11 @@ export interface SettingsInput{
     text:string,
     readonly:boolean,
     
+}
+
+export interface otherProductProps{
+    icony:any,
+    name:string,
+    description:string,
+    link:string
 }
