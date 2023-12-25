@@ -1,7 +1,9 @@
 import * as action from "./actionTypes.js";
 import Data from "../pages/dashboard/data.js";
-const URL = "http://localhost:8000/api";
-const Origin = "http://localhost:3000";
+// const URL = "http://localhost:8000/api";
+const URL = "https://codequest-server.onrender.com/api"
+// const Origin = "http://localhost:3000";
+const Origin = 'https://codequst-app.vercel.app'
 
 export const verifyCookie =
   (navigate, removeCookie, flag) => async (dispatch) => {

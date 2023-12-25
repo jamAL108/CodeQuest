@@ -15,7 +15,7 @@ app.use(
   cors(
     {
     // origin: "https://rablo-round3.vercel.app",
-    origin:"http://localhost:3000",
+    origin:"https://codequst-app.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   }
