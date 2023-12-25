@@ -36,7 +36,7 @@ const  HomeAsk = () => {
     gap={{base:'0.8rem',md:0}}
     >
 
-        <Flex width={{base:'100%',md:'55%'}} paddingRight={{base:0,md:'20px' }}  height={{base:'auto',md:'100%'}} 
+        <Flex width={{base:'100%',md:'390px'}} paddingRight={{base:0,md:'20px' }}  height={{base:'auto',md:'100%'}} 
         borderRight={{base:'none',md:'0.7px solid grey'}} gap={{base:'0.8rem',md:0}} direction={{base:'column',md:'row'}} >
 
            <Input bg='accent.light' borderRadius={{base:'4px',md:'none' }}
