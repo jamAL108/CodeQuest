@@ -54,8 +54,8 @@ export const Login = async (req, res) => {
     res.cookie("token", token, {
       expiresIn: "1d",
       // httpOnly: true
+      secure: true,
     });
-          // secure: true,
       // withCredentials: true,
       // sameSite: "none",
     console.log(token)
