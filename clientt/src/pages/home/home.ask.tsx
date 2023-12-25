@@ -31,7 +31,7 @@ const  HomeAsk = () => {
 
 
   return (
-    <Flex marginTop={{base:'4%',md:'4%'}} width='95%' height={{base:'auto',md:'35px' }} justify='flex-start' align='center' 
+    <Flex zIndex={0} marginTop={{base:'4%',md:'4%'}} width='95%' height={{base:'auto',md:'35px' }} justify='flex-start' align='center' 
     direction={{base:'column',md:'row'}}
     gap={{base:'0.8rem',md:0}}
     >

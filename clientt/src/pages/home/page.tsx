@@ -78,7 +78,7 @@ const Home: React.FC = () => {
       <Nav />
 
       <Box 
-        zIndex={1000}
+        zIndex={1}
         width={{base:'90%',md:"70%"}}
         marginTop={{base:'calc(30vh - 4.3rem)' , md:"calc(190px - 4.3rem)"}}
         marginLeft={{base:'0rem',md:"-150px"}}
