@@ -79,7 +79,7 @@ const Home: React.FC = () => {
 
       <Box 
         zIndex={1000}
-        width={{base:'90%',md:"60%"}}
+        width={{base:'90%',md:"70%"}}
         marginTop={{base:'calc(30vh - 4.3rem)' , md:"calc(190px - 4.3rem)"}}
         marginLeft={{base:'0rem',md:"-150px"}}
         height={{base:'85vh',md:"600px"}}
