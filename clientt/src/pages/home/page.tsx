@@ -10,9 +10,24 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { verifyCookie } from "../../redux/action";
 import { Dispatch } from "redux";
-import { Text, Box, Image, Center, Show, Hide } from "@chakra-ui/react";
+import { Text, Box, Image, Center, Show, Grid , Flex} from "@chakra-ui/react";
 
 const Home: React.FC = () => {
+
+  useEffect(() => {
+    function handleResize() {
+      window.location.reload();
+    }
+
+    // Attach the event listener to the window object
+    window.addEventListener('resize', handleResize);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     // Update document title when component mounts
     document.title = "codeQuest - Home";
@@ -50,7 +65,7 @@ const Home: React.FC = () => {
       overflowY="scroll"
       overflowX="hidden"
       display="flex"
-      justifyContent="center"
+      justifyContent="flex-start"
       alignItems="center"
       flexDirection="column"
       css={{
@@ -62,11 +77,12 @@ const Home: React.FC = () => {
     >
       <Nav />
 
-      <Box
-        width="60%"
+      <Box 
+        zIndex={1000}
+        width={{base:'90%',md:"60%"}}
         marginTop="calc(30vh - 4.3rem)"
-        marginRight="10rem"
-        height="74vh"
+        marginRight={{base:'0rem',md:"10rem"}}
+        height={{base:'85vh',md:"74vh"}}
         display="flex"
         gap={2}
       >
@@ -81,13 +97,13 @@ const Home: React.FC = () => {
           <Box
             border="1.955px  solid grey"
             borderRadius="50%"
-            width="30%"
-            height="8px"
+            width={{base:'100%',md:"30%"}}
+            height={{base:"15px",md:"8px"}}
           ></Box>
 
           <Box
-            width="3px"
-            height="55%"
+            width={{base:'2px',md:"3px"}}
+            height={{base:'65%',md:"55%"}}
             bg="linear-gradient(transparent, #7c72ff 30%)"
           ></Box>
 
@@ -104,28 +120,28 @@ const Home: React.FC = () => {
           </Box>
 
           <Box
-            width="3px"
-            height="55%"
+            width={{base:'2px',md:"3px"}}
+            height={{base:'65%',md:"55%"}}
             bg="linear-gradient(#7c72ff, #2da44e 80%, #3fb950)"
           ></Box>
         </Box>
 
         <Box
-          width="93%"
+          width={{base:"95%",md:"93%"}}
           height="full"
           display="flex"
           justifyContent="flex-start"
           alignItems="center"
           flexDirection="column"
         >
-          <Box width="95%" fontFamily="body">
+          <Box width='95%' fontFamily="body">
             <Text
               as="h1"
               lineHeight="1.3"
               fontWeight={600}
-              fontSize="3.66rem"
-              marginBottom="0.4rem"
-              marginTop="-0.6rem"
+              fontSize={{base:'3.3rem',md:"3.66rem"}}
+              marginBottom={{base:'0.3rem',md:"0.4rem"}}
+              marginTop={{base:'-1.6rem',md:"-0.6rem"}}
             >
               Seamless Interviews, Anywhere, Anytime
             </Text>
@@ -142,14 +158,13 @@ const Home: React.FC = () => {
 
           <HomeAsk />
 
-          <Box
-            marginTop="6%"
+          <Flex
+            marginTop={{base:'8%',md:"6%"}}
             width="95%"
-            height="120px"
-            display="flex"
-            justifyContent="flex-start"
-            alignItems="flex-start"
-            flexDirection="column"
+            height={{base:'auto',md:"120px"}}
+            justify="flex-start"
+            align="flex-start"
+            direction="column"
           >
             <Text
               as="h3"
@@ -160,11 +175,14 @@ const Home: React.FC = () => {
             >
               Trusted by the world’s leading organizations ↘️
             </Text>
-            <Box
+            <Box 
               width="full"
               height="80%"
               gap="20px"
-              display="flex"
+              display={{base:'grid',md:"flex"}}
+              gridTemplateColumns='1fr 1fr'
+              gridColumnGap='13px'
+              gridRowGap='20px'
               justifyContent="center"
               alignItems="center"
             >
@@ -175,7 +193,7 @@ const Home: React.FC = () => {
               <Image filter="grayscale(100%)" src={Kpmg} alt="edv" />
               <Image filter="grayscale(100%)" src={Kpmg} alt="edv" />
             </Box>
-          </Box>
+          </Flex>
         </Box>
       </Box>
 
@@ -184,12 +202,14 @@ const Home: React.FC = () => {
       </div>
 
       <Center
-        className="image"
+        zIndex={0}
         position="absolute"
         right={0}
-        w="30vw"
-        h="95vh"
-        top="1rem"
+        w={{base:'full',md:"30vw"}}
+        h={{base:'50vh',md:"95vh"}}
+        top={{base:"-5rem",md:"1rem"}}
+        transform={{base:'rotate(0deg)',md:'none'}}
+        opacity={{base:'0.6',md:1}}
         bottom="auto"
         _after={{
           content: '""',
@@ -214,8 +234,8 @@ const Home: React.FC = () => {
         <Show breakpoint='(min-width: 780px)'>
           <Image w="full" h="full" src={Homeback} alt="Myage" />
         </Show>
-        <Show breakpoint='(max-width: 780px)'>
-          <Image w="full" h="full" src={Homeback1} alt="Myage" />
+        <Show below="780px">
+          <Image w={{base:'100%',md:"full"}} objectFit='cover' h="full" src={Homeback1} alt="Myage" />
         </Show>
 
         <div className="shadow"></div>

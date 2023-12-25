@@ -22,3 +22,24 @@ html{
 *::selection{
   background-color: #1E4273;
 }
+
+
+.signin_inputs{
+  height: 40%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.6px solid grey;
+  outline: none;
+  color: white !important;
+  transition: border-bottom 0.3s ease ;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+.signin_inputs:focus{
+  border-bottom: 2.5px solid  #753fc8;
+}
+.signin_inputs::placeholder{
+  color: white;
+  opacity: 0.5;
+}

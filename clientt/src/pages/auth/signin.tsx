@@ -87,8 +87,9 @@ const Signin = () => {
     <Center color="white" bg="#232323" w="100vw" h="100vh" >
       <Flex
         position="relative"
-        w="420px"
-        h="430px"
+        w={{base:"90%",sm:"60%",lg:"420px"}}
+        h={{base:'430px' , sm:"530px",lg:"430px"}}
+        marginTop={{base:"-110px",sm:"-150px",lg:"0px"}}
         borderRadius="10px"
         direction="column"
         justify="flex-start"
@@ -148,8 +149,8 @@ const Signin = () => {
             <Text as="p" m={0} fontSize="0.95rem" fontWeight={540}>
               Enter Your Email
             </Text>
-            <input
-              style={inputStyles}
+            <input 
+              className="signin_inputs"
               type="email"
               placeholder="Email"
               value={data.email}
@@ -162,7 +163,7 @@ const Signin = () => {
               Enter Your Password
             </Text>
             <input
-              style={inputStyles}
+              className="signin_inputs"
               type={flag === true ? "text" : "password"}
               placeholder="Password"
               value={data.password}

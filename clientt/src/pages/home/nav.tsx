@@ -163,7 +163,7 @@ const Nav: React.FC = () => {
         <Button
           border="1px solid white"
           borderRadius='5px'
-          padding="0px 12px"
+          padding="6px 12px"
           maxH="60%"
           fontSize="0.9rem"
           transition="0.4s ease"
