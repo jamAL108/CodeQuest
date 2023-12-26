@@ -35,18 +35,6 @@ const theme = extendTheme({
   fonts,
   components: {
     Button: {
-      //   baseStyle: {
-      // 	fontWeight: "bold", // Change the default font weight
-      // 	borderRadius: "8px", // Change the default border radius
-      // 	_focus: {
-      // 	  boxShadow: "none", // Remove the default focus box shadow
-      // 	},
-      //   },
-      //   sizes: {
-      // 	md: {
-      // 	  fontSize: "md", // Change the default font size for the medium button size
-      // 	},
-      //   },
       variants: {
         solid: {
           h:'none',

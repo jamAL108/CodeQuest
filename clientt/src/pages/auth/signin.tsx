@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../scss/auth/signin.scss";
+// import "../../scss/auth/signin.scss";
 import Logo from "../../images/mainlogog.png";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";

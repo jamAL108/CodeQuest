@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { EMAIL } from '../../redux/actionTypes';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
-import { Box , Button , Text  ,  Flex , Input } from '@chakra-ui/react';
+import { Box , Button   ,  Flex , Input } from '@chakra-ui/react';
 
 const  HomeAsk = () => {
   const [email,setemail] =useState("")

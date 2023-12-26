@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
-// import '../../scss/dashboard/addsection.scss'
 import { Menu } from 'lucide-react'
 import { Sections } from '../../interface/interface'
 
-import { Text , Button } from '@chakra-ui/react'
+import { Text  } from '@chakra-ui/react'
 const Addsection: React.FC = () => {
 
   const [section, setSection] = useState<Sections>({

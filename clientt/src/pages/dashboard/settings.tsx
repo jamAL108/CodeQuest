@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { LogOut ,Menu } from "lucide-react";
-// import { motion } from "framer-motion";
 import { user } from "../../interface/interface";
 import { Text, Button, Box , Divider ,Flex , Show} from "@chakra-ui/react";
 import { dashboardNavProps } from '../../interface/interface'

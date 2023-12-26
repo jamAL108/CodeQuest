@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/react";
 import Other_product from "./other_product";
 import Big_Other_product from "./Big_Other_product";
-import "../../scss/home/nav.css";
+// import "../../scss/home/nav.css";
 import OtherProductData from "./data";
 
 const Nav: React.FC = () => {
