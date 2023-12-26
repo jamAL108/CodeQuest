@@ -14,24 +14,8 @@ import { Text, Box, Image, Center, Show, Grid , Flex} from "@chakra-ui/react";
 
 const Home: React.FC = () => {
 
-  // useEffect(() => {
-  //   function handleResize() {
-  //     window.location.reload();
-  //   }
-
-  //   // Attach the event listener to the window object
-  //   window.addEventListener('resize', handleResize);
-
-  //   // Remove the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
-
   useEffect(() => {
-    // Update document title when component mounts
     document.title = "codeQuest - Home";
-    // Clean up document title when component unmounts
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const dispatch: Dispatch<any> = useDispatch();

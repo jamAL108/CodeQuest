@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
-import { X  } from "lucide-react";
+import { X } from "lucide-react";
 import Logo from "../../images/mainlogog.png";
 import { useNavigate } from "react-router-dom";
 import {
@@ -20,20 +20,18 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import Other_product from './other_product'
+import Other_product from "./other_product";
+import Big_Other_product from "./Big_Other_product";
 import "../../scss/home/nav.css";
-import OtherProductData from './data'
+import OtherProductData from "./data";
 
 const Nav: React.FC = () => {
-  const [anchorEl, setAnchorEl] = useState<any>(null);
-  const dummyy = ["Pricing Policy",'Cookies Policy','terms & conditions','Meet The Creators']
-  const open = Boolean(anchorEl);
-  const handleClick: React.MouseEventHandler<HTMLHeadingElement> = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const dummyy = [
+    "Pricing Policy",
+    "Cookies Policy",
+    "terms & conditions",
+    "Meet The Creators",
+  ];
   const [flag, setflag] = useState<boolean>(true);
   const [nav, setnav] = useState<boolean>(false);
   const Navigate = useNavigate();
@@ -58,7 +56,7 @@ const Nav: React.FC = () => {
       fontFamily="body"
     >
       <Box
-        marginLeft={{ base: "0px", md: "50px" }}
+        marginLeft={{ base: "0px", md: "15px" }}
         w={{ base: "45%", md: "50%" }}
         height="full"
         display="flex"
@@ -129,11 +127,38 @@ const Nav: React.FC = () => {
             Others
           </MenuButton>
           <MenuList>
-            <MenuItem>Download</MenuItem>
-            <MenuItem>Create a Copy</MenuItem>
-            <MenuItem>Mark as Draft</MenuItem>
-            <MenuItem>Delete</MenuItem>
-            <MenuItem>Attend a Workshop</MenuItem>
+            <MenuItem>Pricing Policy</MenuItem>
+            <MenuItem>terms & conditions</MenuItem>
+            <MenuItem>Cookies Policy</MenuItem>
+            <MenuItem>Meet The Creators"</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu>
+          <MenuButton
+            marginTop="6px"
+            as={Button}
+            variant="outline"
+            color="accent.light"
+            border={0}
+            _hover={{ bg: "none", opacity: 0.76 }}
+            display={{ base: "none", md: "flex" }}
+            _active={{ bg: "none" }}
+            fontSize="0.83rem"
+            fontWeight={430}
+            transition="0.4s ease"
+            rightIcon={<KeyboardArrowDownIcon />}
+          >
+            Other Product
+          </MenuButton>
+          <MenuList color='black' fontSize='0.6rem' >
+          {OtherProductData.map((item, key) => (
+              <Big_Other_product
+               icony={item.icony}
+               name={item.name}
+               description={item.description}
+               link={item.link}
+            />
+          ))}
           </MenuList>
         </Menu>
       </Box>
@@ -210,7 +235,7 @@ const Nav: React.FC = () => {
           background="rgba(0,0,0,0.5)"
           direction="column"
         >
-          <Flex  width="100%" height="3.6rem" justify="flex-end" align="center">
+          <Flex width="100%" height="3.6rem" justify="flex-end" align="center">
             <X
               style={{ marginRight: "14px" }}
               className="ico"
@@ -224,15 +249,15 @@ const Nav: React.FC = () => {
           </Flex>
 
           <Flex
-            overflowY='scroll'
-            overflowX='hidden'
+            overflowY="scroll"
+            overflowX="hidden"
             className="HOMEnavSidebar"
             height="calc(100vh - 4rem)"
             direction="column"
             align="center"
             justify="flex-start"
             bg="white"
-            fontSize='1rem'
+            fontSize="1rem"
             borderTopLeftRadius={5}
             borderBottomLeftRadius={5}
           >
@@ -243,18 +268,18 @@ const Nav: React.FC = () => {
               direction="column"
               w="85%"
               h="auto"
-              minH='85%'
-              maxH='100vh'
-              gap='5px'
+              minH="85%"
+              maxH="100vh"
+              gap="5px"
             >
               <Text
                 as="h2"
                 h="50px"
                 w="100%"
-                fontSize='1rem'
-                display='flex'
-                justifyContent='flex-start'
-                alignItems='center'
+                fontSize="1rem"
+                display="flex"
+                justifyContent="flex-start"
+                alignItems="center"
                 className="btn"
               >
                 About us
@@ -263,86 +288,105 @@ const Nav: React.FC = () => {
                 as="h2"
                 h="50px"
                 w="100%"
-                fontSize='1rem'
-                display='flex'
-                justifyContent='flex-start'
-                alignItems='center'
+                fontSize="1rem"
+                display="flex"
+                justifyContent="flex-start"
+                alignItems="center"
                 className="btn"
               >
                 Contact
               </Text>
 
-              <Accordion allowToggle  w="100%">
-                <AccordionItem borderTop='none' borderBottom='none'>
+              <Accordion allowToggle w="100%">
+                <AccordionItem borderTop="none" borderBottom="none">
                   <h2>
-                    <AccordionButton minH="50px" _hover={{bg:'white'}} 
-                    _focus={{bg:'white'}}>
-                      <Box as="span" flex="1" marginLeft='-1rem' textAlign="left">
+                    <AccordionButton
+                      minH="50px"
+                      _hover={{ bg: "white" }}
+                      _focus={{ bg: "white" }}
+                    >
+                      <Box
+                        as="span"
+                        flex="1"
+                        marginLeft="-1rem"
+                        textAlign="left"
+                      >
                         Others
                       </Box>
-                      <AccordionIcon marginRight='-1rem' />
+                      <AccordionIcon marginRight="-1rem" />
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4}>
-                    {dummyy.map((item,key)=>(
-                         <Text
-                         key={key}
-                          as="h2"
-                          h="45px"
-                          w="100%"
-                          fontSize='1rem'
-                          display='flex'
-                          justifyContent='flex-start'
-                          alignItems='center'
-                          className="btn"
-                         >
+                    {dummyy.map((item, key) => (
+                      <Text
+                        key={key}
+                        as="h2"
+                        h="45px"
+                        w="100%"
+                        fontSize="1rem"
+                        display="flex"
+                        justifyContent="flex-start"
+                        alignItems="center"
+                        className="btn"
+                      >
                         {item}
-                     </Text>
+                      </Text>
                     ))}
                   </AccordionPanel>
                 </AccordionItem>
               </Accordion>
 
-              <Accordion allowToggle  w="100%">
-                <AccordionItem borderTop='none' borderBottom='none'>
+              <Accordion allowToggle w="100%">
+                <AccordionItem borderTop="none" borderBottom="none">
                   <h2>
-                    <AccordionButton minH="50px" _hover={{bg:'white'}} 
-                    _focus={{bg:'white'}}>
-                      <Box as="span" flex="1" marginLeft='-1rem' textAlign="left">
+                    <AccordionButton
+                      minH="50px"
+                      _hover={{ bg: "white" }}
+                      _focus={{ bg: "white" }}
+                    >
+                      <Box
+                        as="span"
+                        flex="1"
+                        marginLeft="-1rem"
+                        textAlign="left"
+                      >
                         Other Products
                       </Box>
-                      <AccordionIcon marginRight='-1rem' />
+                      <AccordionIcon marginRight="-1rem" />
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4} pl={0}>
-                    {OtherProductData.map((item,key)=>(
-                      <Other_product icony={item.icony} name={item.name} description={item.description} link={item.link}/>
+                    {OtherProductData.map((item, key) => (
+                      <Other_product
+                        icony={item.icony}
+                        name={item.name}
+                        description={item.description}
+                        link={item.link}
+                      />
                     ))}
                   </AccordionPanel>
                 </AccordionItem>
               </Accordion>
             </Flex>
-            
-            <Flex minH='10%' h='10%' justify='center'  w='100%'  >
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                Navigate("/auth/signin");
-              }}
-              h='60%'
-              width="85%"
-              px={0}
-              borderRadius={7}
-              bg="#24292F"
-              fontSize="1rem"
-              fontWeight={460}
-              letterSpacing="1px"
-            >
-              Sign in
-            </Button>
+
+            <Flex minH="10%" h="10%" justify="center" w="100%">
+              <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  Navigate("/auth/signin");
+                }}
+                h="60%"
+                width="85%"
+                px={0}
+                borderRadius={7}
+                bg="#24292F"
+                fontSize="1rem"
+                fontWeight={460}
+                letterSpacing="1px"
+              >
+                Sign in
+              </Button>
             </Flex>
-
-
           </Flex>
         </Flex>
       )}

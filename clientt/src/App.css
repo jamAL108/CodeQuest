@@ -60,6 +60,25 @@ html{
     gap: 5%;
 }
 
+.homeNavBIGAccordion{
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
+  height: 42px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 1fr;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
+}
+.homeNavBIGAccordion:hover{
+  background-color: #e6e6ed;
+}
+
 .HOMEnavSidebar{
   width: 90%;
 }
