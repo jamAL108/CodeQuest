@@ -46,3 +46,27 @@ html{
   color: white;
   opacity: 0.5;
 }
+
+.homeNavAccordion{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+    height: 55px;
+    width: 100%;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+}
+
+.HOMEnavSidebar{
+  width: 90%;
+}
+
+@media screen and (min-width:500px) {
+  .HOMEnavSidebar{
+    width: 55%;
+  }
+}

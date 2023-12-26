@@ -210,7 +210,7 @@ const Nav: React.FC = () => {
           background="rgba(0,0,0,0.5)"
           direction="column"
         >
-          <Flex width="100%" height="3.6rem" justify="flex-end" align="center">
+          <Flex  width="100%" height="3.6rem" justify="flex-end" align="center">
             <X
               style={{ marginRight: "14px" }}
               className="ico"
@@ -224,7 +224,9 @@ const Nav: React.FC = () => {
           </Flex>
 
           <Flex
-            width="90%"
+            overflowY='scroll'
+            overflowX='hidden'
+            className="HOMEnavSidebar"
             height="calc(100vh - 4rem)"
             direction="column"
             align="center"
@@ -241,6 +243,8 @@ const Nav: React.FC = () => {
               direction="column"
               w="85%"
               h="auto"
+              minH='85%'
+              maxH='100vh'
               gap='5px'
             >
               <Text
@@ -310,7 +314,7 @@ const Nav: React.FC = () => {
                       <AccordionIcon marginRight='-1rem' />
                     </AccordionButton>
                   </h2>
-                  <AccordionPanel pb={4}>
+                  <AccordionPanel pb={4} pl={0}>
                     {OtherProductData.map((item,key)=>(
                       <Other_product icony={item.icony} name={item.name} description={item.description} link={item.link}/>
                     ))}
@@ -318,17 +322,16 @@ const Nav: React.FC = () => {
                 </AccordionItem>
               </Accordion>
             </Flex>
-
+            
+            <Flex minH='10%' h='10%' justify='center'  w='100%'  >
             <Button
               onClick={(e) => {
                 e.preventDefault();
                 Navigate("/auth/signin");
               }}
-              position="absolute"
-              bottom="10"
-              width="75%"
+              h='60%'
+              width="85%"
               px={0}
-              py="10px"
               borderRadius={7}
               bg="#24292F"
               fontSize="1rem"
@@ -337,6 +340,9 @@ const Nav: React.FC = () => {
             >
               Sign in
             </Button>
+            </Flex>
+
+
           </Flex>
         </Flex>
       )}
