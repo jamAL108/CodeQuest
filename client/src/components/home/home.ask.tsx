@@ -1,6 +1,7 @@
+'use client';
 import React,{useState} from 'react'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import {  useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { EMAIL } from '../../redux/actionTypes';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
@@ -9,7 +10,7 @@ import { Box , Button   ,  Flex , Input } from '@chakra-ui/react';
 const  HomeAsk = () => {
   const [email,setemail] =useState("")
   const dispatch: Dispatch<any> = useDispatch()
-  const navigate  = useNavigate()
+  const router  = useRouter()
 
   const Linkstyle = {
     backgroundColor:'transparent',
@@ -54,28 +55,20 @@ const  HomeAsk = () => {
            }}/>
 
 
-           <Button 
-           height={{base:'3.07rem',md:'full'}}
-           width={{base:'95%',md:'40%'}}
-           bg="outbutton.bg"
-           transition='0.3s ease'
-           _hover={{bg:"outbutton.hover"}}
-           borderRadius={{base:'4px',md:'none' }}
-           borderBottomRightRadius='4px' 
-           borderTopRightRadius='4px' 
-           fontSize={{base:'0.95rem',md:'0.8rem'}}
-           fontWeight={{base:550,md:450}}
+           <button 
+           className='text-white bg-[#753fc8] base:h-[3.07rem] md:h-full base:w-[95%] md:w-[40%] tranition-[0.3] duration-[ease] hover:bg-[#6336a8]  base:rounded-[4px] md:rounded-none 
+           base:text-[0.95rem] md:text-[0.8rem] base:font-[550] md:font-[450] rounded-r-[4px]'
            onClick={(e)=>{
             e.preventDefault()
             if(email.length===0 || !email.includes('@')){
               alert("Enter your email properly")
             }else{
               dispatch({type:EMAIL,payload:email})
-              navigate('/auth/signup')
+              router.push('/auth/signup')
             }
            }}>
             Signup for codeQuest
-           </Button>
+           </button>
     
         </Flex>
 
@@ -83,27 +76,13 @@ const  HomeAsk = () => {
 
         <Box paddingLeft={{base:0,md:'20px'}} width={{base:'100%',md:'110px'}} height={{base:'auto',md:'full'}} >
 
-           <Button  
-            backgroundColor="transparent"
-            border="1.7px solid #753fc8"
-            borderRadius="4px"
-            height={{base:'3.07rem',md:"100%"}}
-            paddingLeft={{base:0,md:'1px'}}
-            paddingRight={{base:0,md:"7px"}}
-            width={{base:'95%',md:"100%"}}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            gap="0px"
-            fontSize={{base:'1.04rem',md:"0.9rem"}}
-            fontWeight="550"
-            cursor="pointer"
-            zIndex={0}
+           <button  
+           className='text-white bg-transparent border-[1.7px] border-[#753fc8] rounded-[4px] base:h-[3.07rem] md:h-[100%] base:pl-0 md:pl-[1px] base:pr-0 md:pr-[7px] base:w-[95%] md:w-[100%] flex justify-center items-center gap-0 base:text-[1.04rem] md:text-[0.9rem] font-[550] cursor-pointer z-0 transition-[0.3] duration-[ease]  hover:border-white'
             onClick={(e)=>{
             e.stopPropagation()
             e.preventDefault()
-            navigate("/auth/signin")
-           }}>Sign in  <KeyboardArrowRightIcon/></Button>
+            router.push("/auth/signin")
+           }}>Sign in  <KeyboardArrowRightIcon/></button>
         </Box>
 
     </Flex>
