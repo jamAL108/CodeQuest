@@ -117,11 +117,11 @@ const Nav: React.FC = () => {
           >
             Others
           </MenuButton>
-          <MenuList className="p-3 flex flex-col gap-1 text-[0.87rem] font-[470] text-black shadow-[0px_0px_16px_1px_rgba(0,0,0,0.75)]">
-            <MenuItem className="py-[7px]  cursor-pointer hover:bg-[#e6e6ed]">Pricing Policy</MenuItem>
-            <MenuItem className="py-[7px] cursor-pointer hover:bg-[#e6e6ed]">terms & conditions</MenuItem>
-            <MenuItem className="py-[7px] cursor-pointer hover:bg-[#e6e6ed]">Cookies Policy</MenuItem>
-            <MenuItem className="py-[7px] cursor-pointer hover:bg-[#e6e6ed]">Meet The Creators</MenuItem>
+          <MenuList className="p-3 flex flex-col gap-1 text-[0.87rem] font-[470] !text-black shadow-[0px_0px_16px_1px_rgba(0,0,0,0.75)]">
+            <MenuItem className="py-[7px] !text-black  cursor-pointer hover:bg-[#e6e6ed]">Pricing Policy</MenuItem>
+            <MenuItem className="py-[7px] !text-black cursor-pointer hover:bg-[#e6e6ed]">terms & conditions</MenuItem>
+            <MenuItem className="py-[7px] !text-black cursor-pointer hover:bg-[#e6e6ed]">Cookies Policy</MenuItem>
+            <MenuItem className="py-[7px] !text-black cursor-pointer hover:bg-[#e6e6ed]">Meet The Creators</MenuItem>
           </MenuList>
         </Menu>
         <Menu>
