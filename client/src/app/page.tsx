@@ -43,12 +43,10 @@ const Home: React.FC = () => {
   }, []);
   return (
     <Box 
-    className="text-white HomePage"
+    className="text-white !bg-[#0d1116]"
       color="accent.light"
       width="100%"
       height="auto"
-      // maxH="100vh"
-      bg="backG.home"
       overflowY="scroll"
       overflowX="hidden"
       display="flex"
