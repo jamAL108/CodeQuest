@@ -56,7 +56,7 @@ const  HomeAsk = () => {
 
 
            <button 
-           className='text-white bg-[#753fc8] base:h-[3.07rem] md:h-full base:w-[95%] md:w-[40%] tranition-[0.3] duration-[ease] hover:bg-[#6336a8]  base:rounded-[4px] md:rounded-none 
+           className='text-white bg-[#753fc8] base:h-[3.07rem] md:h-full base:w-[95%] md:w-[40%] tranition duration-500 ease hover:bg-[#6336a8]  base:rounded-[4px] md:rounded-none 
            base:text-[0.95rem] md:text-[0.8rem] base:font-[550] md:font-[450] rounded-r-[4px]'
            onClick={(e)=>{
             e.preventDefault()
@@ -77,7 +77,7 @@ const  HomeAsk = () => {
         <Box paddingLeft={{base:0,md:'20px'}} width={{base:'100%',md:'110px'}} height={{base:'auto',md:'full'}} >
 
            <button  
-           className='text-white bg-transparent border-[1.7px] border-[#753fc8] rounded-[4px] base:h-[3.07rem] md:h-[100%] base:pl-0 md:pl-[1px] base:pr-0 md:pr-[7px] base:w-[95%] md:w-[100%] flex justify-center items-center gap-0 base:text-[1.04rem] md:text-[0.9rem] font-[550] cursor-pointer z-0 transition-[0.3] duration-[ease]  hover:border-white'
+           className='text-white bg-transparent border-[1.7px] border-[#753fc8] rounded-[4px] base:h-[3.07rem] md:h-[100%] base:pl-0 md:pl-[1px] base:pr-0 md:pr-[7px] base:w-[95%] md:w-[100%] flex justify-center items-center gap-0 base:text-[1.04rem] md:text-[0.9rem] font-[550] cursor-pointer z-0 tranition duration-500 ease  hover:border-white'
             onClick={(e)=>{
             e.stopPropagation()
             e.preventDefault()

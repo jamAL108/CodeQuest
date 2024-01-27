@@ -25,7 +25,6 @@ import {
   Show,
   Input,
 } from "@chakra-ui/react";
-import { dashboardNavProps } from "../../interface/interface";
 import Nav from '@/components/commonComponent/nav'
 
 
@@ -54,6 +53,16 @@ const Activities: React.FC = () => {
     };
     dispatch(fetchSections(dataa));
   }, []);
+
+
+  useEffect(() => {
+    document.title = "codeQuest - Dashboard";
+    return () => {
+      document.title = "codeQuest";
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   useEffect(() => {
     if (userState?.sections && userState.sections.length !== 0) {
@@ -183,7 +192,7 @@ const Activities: React.FC = () => {
         </Flex>
         <Spacer />
         <button
-        className="bg-[#7299F2] hover:bg-[#6a8de1] text-[#202029]  gap-2 h-[38px] base:text-[0.8rem] md:text-[0.9rem] rounded-[4px] base:py-[3px] md:py-[4px] base:px-[4px] md:px-[13px] transition-[0.4] duration-[ease-in-out] flex justify-center items-center font-[550] text-pop"
+        className="bg-[#7299F2] hover:bg-[#6a8de1] text-[#202029]  gap-2 h-[38px] base:text-[0.8rem] md:text-[0.9rem] rounded-[4px] base:py-[3px] md:py-[4px] base:px-[4px] md:px-[13px] tranition duration-500 ease-in-out flex justify-center items-center font-[550] text-pop"
         >
           <Plus color="#202029" size={19} />
           Add new Section

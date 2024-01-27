@@ -96,7 +96,7 @@ const Nav: React.FC = () => {
         </button>
         <button
 
-          className="text-white px-[15px] transition-[0.4s] duration-[ease] hover:opacity-[0.72] text-[0.83rem] font-[430] mt-[6px] base:hidden md:flex"
+          className="text-white px-[15px] transition duration-300 ease-in-out hover:opacity-[0.72] text-[0.83rem] font-[430] mt-[6px] base:hidden md:flex"
         >
           Contact
         </button>
@@ -169,7 +169,7 @@ const Nav: React.FC = () => {
       >
         {flag === false && (
           <button
-            className="text-white py-[5px] px-[10px] transition-[0.4s] duration-[ease] hover:opacity-[0.72] text-[0.9rem] font-[400] mt-[6px] bg-none"
+            className="text-white py-[5px] px-[10px] transition duration-300 ease hover:opacity-[0.72] text-[0.9rem] font-[400] mt-[6px] bg-none"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -180,7 +180,7 @@ const Nav: React.FC = () => {
           </button>
         )}
         <button
-          className="text-white border-[1px] border-white rounded-[5px] py-[6px] px-[12px] max-h-[60%] text-[0.9rem] transition-[0.4s] font-[400] hover:opacity-[0.76] duration-[ease]"
+          className="text-white border-[1px] border-white rounded-[5px] py-[6px] px-[12px] max-h-[60%] text-[0.9rem] transition duration-300 font-[400] hover:opacity-[0.76] ease"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();

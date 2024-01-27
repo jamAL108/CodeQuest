@@ -56,21 +56,11 @@ const Settings: React.FC = () => {
             Settings
           </Text>
         </Flex>
-        <Button
-            variant="solid"
-            px={5}
-            paddingY={0}
-            h={38}
-            fontSize="0.83rem"
-            bg="button.bg"
-            color="button.color"
-            transition="0.5s ease-in-out"
-            borderRadius={4}
-            gap={3}
-            _hover={{ bg: "button.hover", transform: "scale(1.03)" }}
+        <button
+        className="bg-[#7299F2] hover:bg-[#6a8de1] text-[#202029] transition duration-500 ease-in-out hover:scale-[1.03] text-[0.83rem] gap-3 rounded-[4px] h-[38px] py-0 px-[5px] "
           >
             Logout <LogOut size={17} />
-          </Button>
+          </button>
 
 
       </Box>
@@ -86,20 +76,10 @@ const Settings: React.FC = () => {
         w="full"
         >
           <Text fontSize="1.15rem" fontWeight={600} as="h2" >Your Details</Text>
-          <Button
-            variant="solid"
-            px={4}
-            paddingY={0}
-            h={38}
-            fontSize="0.85rem"
-            bg="button.bg"
-            color="button.color"
-            transition="0.5s ease-in-out"
-            borderRadius={4}
-            _hover={{ bg: "button.hover", transform: "scale(1.05)" }}
-          >
+          <button 
+          className="bg-[#7299F2] hover:bg-[#6a8de1] text-[#202029] transition duration-500 ease-in-out hover:scale-[1.03] text-[0.83rem] gap-3 rounded-[4px] h-[38px] py-0 px-[5px]">
             Save Changes
-          </Button>
+          </button>
         </Box>
 
           

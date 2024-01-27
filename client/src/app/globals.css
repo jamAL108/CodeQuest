@@ -54,6 +54,7 @@ html{
 }
 .signin_inputs::placeholder , .SIGNUPinput::placeholder{
   color: white;
+  font-weight: 300;
   opacity: 0.5;
 }
 
@@ -63,8 +64,9 @@ html{
   width: 90%;
   background-color: transparent;
   border: none;
-  font-size: 0.92rem;
-  font-weight: 390;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 200;
   padding-bottom: 2px;
   border-bottom: 1.6px solid grey;
   outline: none;
