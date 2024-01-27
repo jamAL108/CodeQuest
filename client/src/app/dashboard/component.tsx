@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useState, useRef } from "react";
-import { RootState } from "../../redux";
 import { useSelector, useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import { fetchSections } from "@/redux/userSlice";
@@ -32,7 +31,7 @@ const Activities: React.FC = () => {
 //   const { navchange } = props;
   const dispatch: Dispatch<any> = useDispatch();
   const [data, setdata] = useState<Sections[]>([]);
-  const userState = useSelector((state: RootState) => state.user);
+  const userState = useSelector((state: any) => state.user);
   const [navitem, setnavitem] = useState<Number>(0);
   const [datatoshow, setdatatoshow] = useState<Sections[]>([]);
   const [itemsPerPage, setItemsPerPage] = useState<number>(

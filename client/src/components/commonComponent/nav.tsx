@@ -27,10 +27,9 @@ import {
     MenuItem,
     CloseButton,
 } from "@chakra-ui/react";
-import { useCookies } from "react-cookie";
-import { DashboardIdx } from "../../interface/interface";
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
+import SignoutSupabase from '@/auth/signout'
 
 const Nav: React.FC = () => {
     const [user, setuser] = useState<any>(null)
@@ -73,10 +72,10 @@ const Nav: React.FC = () => {
         dropdown?.current?.click();
     };
 
-    const Logout = () => {
+    const Logout =async () => {
         localStorage.removeItem('codeQuestDashboardIndex')
         localStorage.removeItem('codeQuestUSER')
-        router.push('/')
+        await SignoutSupabase()
     }
 
     useEffect(() => {
@@ -351,7 +350,7 @@ const Nav: React.FC = () => {
                         </Text>
 
                         <Text as="p" fontSize={{ base: "0.7rem", md: "0.53rem" }} m={0} opacity={0.7}>
-                            jamalmohideen971@gmail.com
+                            {user?.email}
                         </Text>
                     </Flex>
                 </Grid>
@@ -361,7 +360,7 @@ const Nav: React.FC = () => {
                         h="80%"></MenuButton>
                     <MenuList minW='0' fontFamily='Poppins , sans-serif' maxW={{ base: '100vw', md: 'calc(100vw - 80vw)' }} w={{ base: "calc(100vw - 15vw)", md: 'calc(100vw - 80vw - 3vw)' }} bg="#282833" border="none">
                         <MenuItem h={{ base: "3.5rem", md: '2.9rem' }} bg="#282833" _hover={{ bg: "#202123" }} gap='15px'
-                            display='flex' justifyContent='center' alignItems='center'>
+                            display='flex' justifyContent='center' alignItems='center' onClick={Logout}>
                             <LogOut size={16} />
                             <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='80%'>Log out</Text></MenuItem>
 
@@ -375,9 +374,9 @@ const Nav: React.FC = () => {
                             <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='80%'>Settings</Text></MenuItem>
 
                         <MenuItem h={{ base: "3.5rem", md: '2.9rem' }} bg="#282833" _hover={{ bg: "#202123" }} gap='15px'
-                            display='flex' justifyContent='center' alignItems='center'  >
+                            display='flex' justifyContent='center' alignItems='center' onClick={Logout}  >
                             <LogOut size={16} />
-                            <Text textAlign='left' fontSize='0.8rem' fontWeight='240' width='80%' onClick={Logout}>Log out</Text>
+                            <Text textAlign='left' fontSize='0.8rem' fontWeight='240' width='80%'>Log out</Text>
                         </MenuItem>
 
                     </MenuList>

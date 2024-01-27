@@ -10,7 +10,7 @@ export async function sendItToSignup() {
 }
 
 export async function senditToMain(){
-    const { data } = await readUserSession()
+    const { data , error } = await readUserSession()
     if (data.session) {
         return redirect('/dashboard')
     }

@@ -4,16 +4,15 @@ import { useRouter } from "next/navigation";
 import { Eye, EyeOff } from "lucide-react";
 import { signinInterface } from "../../../interface/interface";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
-import { login , addSigninError } from "@/redux/userSlice";
+import { addSigninError } from "@/redux/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-
-import { Flex, Center, Text, Button, Image } from "@chakra-ui/react";
+import { Flex, Center, Text, Image } from "@chakra-ui/react";
+import { signinWithEmailPassword } from '@/auth/index'
+import { ColorRing } from 'react-loader-spinner'
 
 const Signin = () => {
   useEffect(() => {
-    // Update document title when component mounts
     document.title = "codeQuest - login";
-    // Clean up document title when component unmounts
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -22,6 +21,7 @@ const Signin = () => {
   const store = useSelector((state: any) => state);
   const [flag, setflag] = useState<boolean>(false);
   const [error, seterror] = useState<string>("");
+  const [request, setrequest] = useState<boolean>(false)
   const [data, setdata] = useState<signinInterface>({
     email: "",
     password: "",
@@ -32,15 +32,28 @@ const Signin = () => {
     if (data.email.trim() === "" || data.password.trim() === "") {
       Alert("Enter all required details properly");
     } else {
-        const dataToBePassed={
-            data,
-             router
-        }
-      dispatch(login(dataToBePassed));
+      setrequest(true)
+      API(data);
     }
   };
 
+  const API = async (formdata:any) => {
+    try {
+      const result = await signinWithEmailPassword(formdata)
+      const {error} = JSON.parse(result)
+      if(error?.message){
+        seterror(error.message);
+      }else{
+        router.push("/dashboard")
+      }
+      setrequest(false)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   const Alert = (msg: string) => {
+    setrequest(false)
     seterror(msg);
     setTimeout(() => {
       alert(msg);
@@ -69,28 +82,29 @@ const Signin = () => {
   const errorStyles = {
     width: '100%',
     color: 'red',
-    fontSize: '0.75rem',
+    fontSize: '0.8rem',
     fontWeight: 550,
     display: 'flex',
+    LetterSpacing:"2px",
     justifyContent: 'center',
     alignItems: 'center',
     gap: '10px',
   };
 
-  const iconStyles ={
-    position:'absolute',
-    top:'50%',
-    right:'2%',
-    cursor:'pointer'
+  const iconStyles = {
+    position: 'absolute',
+    top: '50%',
+    right: '2%',
+    cursor: 'pointer'
   }
 
   return (
     <Center color="white" bg="#232323" w="100vw" h="100vh" >
       <Flex
         position="relative"
-        w={{base:"90%",sm:"60%",lg:"420px"}}
-        h={{base:'430px' , sm:"530px",lg:"430px"}}
-        marginTop={{base:"-110px",sm:"-150px",lg:"0px"}}
+        w={{ base: "90%", sm: "60%", lg: "420px" }}
+        h={{ base: '430px', sm: "530px", lg: "430px" }}
+        marginTop={{ base: "-110px", sm: "-150px", lg: "0px" }}
         borderRadius="10px"
         direction="column"
         justify="flex-start"
@@ -101,7 +115,7 @@ const Signin = () => {
           <Flex
             w="auto"
             h="100%"
-            ml={{base:'8px',md:"25px"}}
+            ml={{ base: '8px', md: "25px" }}
             justify="flex-start"
             align="center"
             gap="2px"
@@ -146,11 +160,11 @@ const Signin = () => {
           direction='column'
           gap="20px"
         >
-          <Flex position="relative" direction='column' w={{base:'90%',md:"73%"}} h="30%" gap='10px'>
+          <Flex position="relative" direction='column' w={{ base: '90%', md: "73%" }} h="30%" gap='10px'>
             <Text as="p" m={0} fontSize="0.95rem" fontWeight={540}>
               Enter Your Email
             </Text>
-            <input 
+            <input
               className="signin_inputs"
               type="email"
               placeholder="Email"
@@ -159,7 +173,7 @@ const Signin = () => {
             />
           </Flex>
 
-          <Flex position="relative" direction='column' gap='10px' w={{base:'90%',md:"73%"}}  h="30%" >
+          <Flex position="relative" direction='column' gap='10px' w={{ base: '90%', md: "73%" }} h="30%" >
             <Text as="p" m={0} fontSize="0.95rem" fontWeight={540}>
               Enter Your Password
             </Text>
@@ -197,9 +211,19 @@ const Signin = () => {
             gap="2rem"
           >
             <button
-            className="bg-[#753fc8] border-none text-white py-[8px] px-[28px] rounded-[6px] text-[0.95rem] capitalize font-[550] tranition duration-500 ease-in-out cursor-pointer hover:bg-[#6336a8]  hover:scale-[1.04]"
+              className="bg-[#753fc8] flex justify-center items-center gap-1 border-none text-white py-[8px] px-[28px] rounded-[6px] text-[0.95rem] capitalize font-[550] tranition duration-500 ease-in-out cursor-pointer hover:bg-[#6336a8]  hover:scale-[1.04]"
               onClick={check}
+              disabled={request} style={request===true ? {opacity:0.67} : {opacity:1}}
             >
+              <ColorRing
+                visible={request}
+                height="30"
+                width="30"
+                ariaLabel="color-ring-loading"
+                wrapperStyle={{}}
+                wrapperClass="color-ring-wrapper"
+                colors={['#fff', '#fff', '#fff', '#fff', '#fff']}
+              />
               Login
             </button>
 
@@ -209,12 +233,12 @@ const Signin = () => {
           </Flex>
         </Flex>
 
-        <Flex w='80%' textAlign='left' 
-        m={0} fontSize='0.8rem' gap='10px' justify='flex-start' align='flex-start'>
+        <Flex w='80%' textAlign='left'
+          m={0} fontSize='0.8rem' gap='10px' justify='flex-start' align='flex-start'>
           New To This Platform ?{" "}
-          <Text 
-          m={0} color='#6336a8' transition='0.5s ease-in-out' cursor='pointer'
-          _hover={{transform:"scale(1.04)" , textDecoration:"underline"}}
+          <Text
+            m={0} color='#6336a8' transition='0.5s ease-in-out' cursor='pointer'
+            _hover={{ transform: "scale(1.04)", textDecoration: "underline" }}
             onClick={(e) => {
               e.preventDefault();
               router.push("/auth/signup");

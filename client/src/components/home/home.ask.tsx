@@ -2,7 +2,6 @@
 import React,{useState} from 'react'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useRouter } from "next/navigation";
-import { EMAIL } from '../../redux/actionTypes';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import { Box , Button   ,  Flex , Input } from '@chakra-ui/react';
@@ -63,7 +62,7 @@ const  HomeAsk = () => {
             if(email.length===0 || !email.includes('@')){
               alert("Enter your email properly")
             }else{
-              dispatch({type:EMAIL,payload:email})
+              // dispatch({type:EMAIL,payload:email})
               router.push('/auth/signup')
             }
            }}>

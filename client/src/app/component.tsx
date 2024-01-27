@@ -6,7 +6,6 @@ import HomeAsk from "../components/home/home.ask";
 import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
-import { VerifyCookie } from "../redux/userSlice";
 import { Dispatch } from "redux";
 import { Text, Box, Image, Center, Show, Grid , Flex} from "@chakra-ui/react";
 
@@ -17,7 +16,6 @@ const Home: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const dispatch: Dispatch<any> = useDispatch();
-  const [cookies, removeCookie] = useCookies([]);
   const beforeback =
     "linear-gradient(to bottom, rgba(13, 17, 22, 0.99) 0%, rgba(0, 0, 0, 0) 100%)";
   
@@ -27,10 +25,10 @@ const Home: React.FC = () => {
   useEffect(() => {
     const dataToBePassed={
       router,
-       removeCookie ,
+      //  removeCookie ,
       flag:false
     }
-    dispatch(VerifyCookie(dataToBePassed));
+    // dispatch(VerifyCookie(dataToBePassed));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

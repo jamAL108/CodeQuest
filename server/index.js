@@ -14,10 +14,7 @@ app.use(cookieParser());
 app.use(
   cors(
     {
-    // origin: "https://rablo-round3.vercel.app",
-    origin:"https://codequst-app.vercel.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
   }
   )
 );

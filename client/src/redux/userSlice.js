@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import Data from './data'
+import Data from '../utils/data'
+
 const URL = "http://localhost:8000/api";
 // const URL = "https://codequest-server.onrender.com/api"
 const Origin = "http://localhost:3000";
@@ -32,9 +33,6 @@ const Slice = createSlice({
         }
     },
     extraReducers:(builder)=>{
-        builder.addCase(VerifyCookie.fulfilled,(state,action)=>{
-            console.log("VERIFYCOOKIE FUNCTION RTK")
-        }),
         builder.addCase(signup.fulfilled,(state,action)=>{
             state.signuperror = action.payload
         }),
@@ -49,57 +47,25 @@ const Slice = createSlice({
 
 /////// API FUNCTIONS
 
-export const VerifyCookie = createAsyncThunk("VerifyCookie", async (args,_,__) => {
-    const {router , removeCookie , flag} = args;
-    // try {
-    //     const data = await fetch(URL, {
-    //         method: "POST",
-    //         credentials: "include",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Accept: "application/json",
-    //             Origin: Origin,
-    //         },
-    //     });
-    //     const msg = await data.json();
-    //     if (data.status === 400) {
-    //         // removeCookie("token");
-    //         const codeQuestUSER = localStorage.getItem("codeQuestUSER");
-    //         if (codeQuestUSER) {
-    //             localStorage.removeItem("codeQuestUSER");
-    //         }
-    //         if (flag === true) {
-    //             navigate("/auth/signin");
-    //         }
-    //     } else {
-    //         localStorage.setItem("codeQuestUSER", JSON.stringify(msg?.user));
-    //         navigate("/dashboard");
-    //     }
-    // } catch (err) {
-    //     console.log(err);
-    // }
-})
-
 export const signup = createAsyncThunk("signup", async (args,_,__) => {
-    const {formdata , router} = args
+    const {data, router} = args
     try {
-        const data = await fetch(`${URL}/signup`, {
+        const resp = await fetch(`${URL}/signup`, {
             method: "POST",
-            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
-                Origin: Origin,
             },
-            body: JSON.stringify(formdata),
+            body: JSON.stringify(data),
         });
-        const msg = await data.json();
-        if (data.status === 200) {
-            router.push("/dashboard");
+        const msg = await resp.json();
+        if (resp.status === 200) {
+            localStorage.setItem("codeQuestUSER",JSON.stringify(msg.user))
         } else {
             return msg?.error
         }
     } catch (err) {
-        console.log(err);
+        console.log(err)
+        return err?.message
     }
 })
 
@@ -110,24 +76,22 @@ export const login = createAsyncThunk("login", async (args,_,__) => {
         console.log(formdata);
         const data = await fetch(`${URL}/login`, {
             method: "POST",
-            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
-                Origin: Origin,
             },
             body: JSON.stringify(formdata),
         });
         const msg = await data.json();
         if (data.status === 200) {
-            console.log("success");
+            localStorage.setItem("codeQuestUSER",JSON.stringify(msg.user))
             router.push("/dashboard");
         } else {
             console.log(msg.error);
             return msg?.error
-            //   dispatch({ type: action.LOGINERROR, payload: msg.error });
         }
     } catch (err) {
         console.log(err);
+        return err?.message
     }
 })
 

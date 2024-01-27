@@ -9,6 +9,8 @@ import { useSelector } from "react-redux";
 import { Text, Flex, Center, Button, Image } from "@chakra-ui/react";
 import { Dispatch } from "redux";
 import {  addEmail , addSignupError , signup } from "@/redux/userSlice";
+import {  signupWithEmailPassword  } from '@/auth/index'
+import { ColorRing } from 'react-loader-spinner'
 
 const Signup: React.FC = () => {
   useEffect(() => {
@@ -31,6 +33,7 @@ const Signup: React.FC = () => {
     typeOfWork: "",
     termsncontd: false,
   });
+  const [request , setrequest] = useState<boolean>(false);
 
   useEffect(() => {
     if (userStore.email.length !== 0) {
@@ -48,6 +51,7 @@ const Signup: React.FC = () => {
   }, [userStore.signuperror]);
 
   const check = () => {
+    setrequest(true)
     seterror("");
     if (
       data.firstName.trim() === "" ||
@@ -63,14 +67,31 @@ const Signup: React.FC = () => {
     } else if (data.termsncontd === false) {
       Alert("Please check the terms and condition policies");
     } else {
-        const dataToBePassed={
-            data, router
-        }
-      dispatch(signup(dataToBePassed));
+      API();      
     }
   };
 
+  const API = async ()=>{
+     try{
+      const dataToBePassed={
+        data, router
+      }
+     dispatch(signup(dataToBePassed));
+     const objectForSupabaseSignup ={
+      email:data.email,
+      password:data.password
+     }
+     const result = await signupWithEmailPassword(objectForSupabaseSignup);
+     console.log(result)
+     setrequest(false)
+     }catch(err){
+        console.log(err)
+        setrequest(false)
+     }
+  }
+
   const Alert = (msg: string) => {
+    setrequest(false)
     seterror(msg);
     setTimeout(() => {
       alert(msg);
@@ -411,11 +432,38 @@ const Signup: React.FC = () => {
           my="30px"
           // className="submit"
         >
+
+
+
+{/* <Button className="gap-1" disabled={request} style={request===true ? {opacity:0.67} : {opacity:1}} onClick={(e) => {
+          handlesubmit();
+        }}> <ColorRing
+                visible={request}
+                height="30"
+                width="30"
+                ariaLabel="color-ring-loading"
+                wrapperStyle={{}}
+                wrapperClass="color-ring-wrapper"
+                colors={['#fff', '#fff', '#fff', '#fff', '#fff']}
+              />
+             Translate</Button> */}
+
+
+
           <button
-          className="bg-[#753fc8] border-none text-white base:py-[14px] md:py-[10px] 
-          base:px-[26px] md:px-[14px] rounded-[6px] base:text-[1rem] md:text-[0.85rem] font-[550] tranition duration-500 ease-in-out cursor-pointer hover:bg-[#6336a8] hover:scale-[1.04)" 
+          className="flex justify-center items-center gap-1   bg-[#753fc8] border-none text-white base:py-[14px] md:py-[10px] base:px-[26px] md:px-[14px] rounded-[6px] base:text-[1rem] md:text-[0.85rem] font-[550] tranition duration-500 ease-in-out cursor-pointer hover:bg-[#6336a8] hover:scale-[1.04)" 
           onClick={check}
-          >
+          disabled={request} style={request===true ? {opacity:0.67} : {opacity:1}}
+          >  
+          <ColorRing
+                visible={request}
+                height="30"
+                width="30"
+                ariaLabel="color-ring-loading"
+                wrapperStyle={{}}
+                wrapperClass="color-ring-wrapper"
+                colors={['#fff', '#fff', '#fff', '#fff', '#fff']}
+              />
             Create An Account
           </button>
         </Flex>
