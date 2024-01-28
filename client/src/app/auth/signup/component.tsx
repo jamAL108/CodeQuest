@@ -11,6 +11,7 @@ import { Dispatch } from "redux";
 import {  addEmail , addSignupError , signup } from "@/redux/userSlice";
 import {  signupWithEmailPassword  } from '@/auth/index'
 import { ColorRing } from 'react-loader-spinner'
+import storeNewUserDataFunction from '@/apireq/storeNewUserData'
 
 const Signup: React.FC = () => {
   useEffect(() => {
@@ -82,6 +83,8 @@ const Signup: React.FC = () => {
       password:data.password
      }
      const result = await signupWithEmailPassword(objectForSupabaseSignup);
+     const newUserRowCreateInSupaBase = await storeNewUserDataFunction(data)
+     console.log(newUserRowCreateInSupaBase)
      console.log(result)
      setrequest(false)
      }catch(err){

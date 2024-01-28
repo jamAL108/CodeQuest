@@ -33,17 +33,19 @@ const Signin = () => {
       Alert("Enter all required details properly");
     } else {
       setrequest(true)
-      API(data);
+      API(data); 
     }
   };
 
   const API = async (formdata:any) => {
     try {
       const result = await signinWithEmailPassword(formdata)
-      const {error} = JSON.parse(result)
+      const {data , error} = JSON.parse(result)
       if(error?.message){
         seterror(error.message);
       }else{
+        const parsedUserData = JSON.parse(result)
+        localStorage.setItem("codeQuestUSER",JSON.stringify(parsedUserData[0]))
         router.push("/dashboard")
       }
       setrequest(false)

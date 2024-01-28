@@ -9,6 +9,7 @@ import {
     UserRound,
     LogOut
 } from "lucide-react";
+import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import { dashboardNavProps } from "../../interface/interface";
 import {
     Box,
@@ -31,9 +32,10 @@ import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
 import SignoutSupabase from '@/auth/signout'
 
-const Nav: React.FC = () => {
+const Nav: React.FC<any>= (props) => {
+    const { navshow  ,  setnavshow } = props
     const [user, setuser] = useState<any>(null)
-    const [windowSize, setWindowSize] = useState<number>(800);
+    const [windowSize, setWindowSize] = useState<number>(0);
     useEffect(() => {
         const Data: string | null = localStorage.getItem("codeQuestUSER");
         const userData: any = Data ? JSON.parse(Data) : null;
@@ -41,10 +43,10 @@ const Nav: React.FC = () => {
         setWindowSize(window.innerWidth)
     }, [])
 
-    const [navshow, setnavshow] = useState<boolean>(false)
 
 
     const dropdown = useRef<HTMLButtonElement | null>(null)
+    const dropDownTrigger = useRef<HTMLButtonElement | null>(null)
 
     const [navflag, setflag] = useState<boolean>(false)
 
@@ -81,10 +83,7 @@ const Nav: React.FC = () => {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
-                dropdown.current &&
-                !dropdown.current.contains(event.target as Node) &&
-                event.target !== dropdown.current
-            ) {
+                dropdown.current &&  !dropdown.current.contains(event.target as Node) && event.target !== dropdown.current ) {
                 setflag(false);
             }
         };
@@ -119,7 +118,7 @@ const Nav: React.FC = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <Center h={{ base: "70%", md: "full" }} pr={{ base: "60px", md: "0px" }} >
+                <Center h={{ base: "70%", md: "full" }} pr={{ base: "60px", md: "0px" }} className="select-none" >
                     <Image w="20%" h="90%" src='/images/mainlogog.png' alt="bf" />
                     <Text as="h2" fontSize={{ base: "1.2rem", md: "1.08rem" }} fontWeight="460" opacity="0.9">
                         codeQuest
@@ -127,7 +126,7 @@ const Nav: React.FC = () => {
                 </Center>
                 <Center h="full" pr={{ base: "0", md: "20px" }}>
                     {navshow === false ? (
-                        <AlignRight className="icon" color="white" size={20} />
+                        <AlignRight className="icon" color="white" size={20}/>
                     ) : (
                         <CloseButton size='20' onClick={(e) => {
                             e.preventDefault()
@@ -147,7 +146,7 @@ const Nav: React.FC = () => {
                 fontWeight={330}
             >
                 <Text as="p" m={0} w={{ base: '85%', md: "75%" }} textAlign="left">
-                    Welcome Jamal,
+                    Welcome {user?.firstName},
                 </Text>
                 <Text as="p" m={0} w={{ base: '85%', md: "75%" }} textAlign="left">
                     Start new Interview sections
@@ -307,7 +306,7 @@ const Nav: React.FC = () => {
             </Flex>
 
             <Center position="absolute" w="100%" bottom={{ base: "5", md: "0" }} h={{ base: "5rem", md: "4rem" }} cursor="pointer">
-                <Grid
+                <Grid 
                     pr={4}
                     pl={3}
                     w="85%"
@@ -360,9 +359,9 @@ const Nav: React.FC = () => {
                         h="80%"></MenuButton>
                     <MenuList minW='0' fontFamily='Poppins , sans-serif' maxW={{ base: '100vw', md: 'calc(100vw - 80vw)' }} w={{ base: "calc(100vw - 15vw)", md: 'calc(100vw - 80vw - 3vw)' }} bg="#282833" border="none">
                         <MenuItem h={{ base: "3.5rem", md: '2.9rem' }} bg="#282833" _hover={{ bg: "#202123" }} gap='15px'
-                            display='flex' justifyContent='center' alignItems='center' onClick={Logout}>
-                            <LogOut size={16} />
-                            <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='80%'>Log out</Text></MenuItem>
+                            display='flex' justifyContent='center' alignItems='center'>
+                            <TextSnippetIcon className="w-[18px] h-[18px]" />
+                            <Text textAlign='left' fontSize='0.8rem' fontWeight='280' width='80%'>Guide Tour</Text></MenuItem>
 
                         <MenuItem h={{ base: "3.5rem", md: '2.9rem' }} bg="#282833" _hover={{ bg: "#202123" }} gap='15px'
                             display='flex' justifyContent='center' borderBottom='1px solid rgba(255, 255, 255, 0.2)' alignItems='center'

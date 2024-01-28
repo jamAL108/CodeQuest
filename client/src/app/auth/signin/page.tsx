@@ -8,5 +8,4 @@ const Page = async () => {
     <Component/>
   )
 }
-
 export default Page

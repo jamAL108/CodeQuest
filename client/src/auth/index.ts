@@ -23,5 +23,11 @@ export const signinWithEmailPassword = async (formdata: {
         email: formdata.email,
         password:formdata.password
     })
+    console.log(result)
+    if(result.error!==null){
     return JSON.stringify(result)
+    }
+    let { data: codeQuestUser, error } = await supabase.from('codeQuestUser').select("*").eq('email', formdata.email)
+    console.log(codeQuestUser)
+    return JSON.stringify(codeQuestUser)
 }

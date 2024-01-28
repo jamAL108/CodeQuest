@@ -90,7 +90,7 @@ const Nav: React.FC = () => {
           </Text>
         </Box>
         <button
-          className="text-white px-[15px] transition-[0.4s] duration-[ease] hover:opacity-[0.72] text-[0.83rem] font-[430] mt-[6px] base:hidden md:flex"
+          className="text-white px-[15px] transition duration-500 ease hover:opacity-[0.72] text-[0.83rem] font-[430] mt-[6px] base:hidden md:flex"
         >
           About us
         </button>

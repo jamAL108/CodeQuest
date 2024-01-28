@@ -31,10 +31,12 @@ const Addsection: React.FC = () => {
     }
   }
 
+  const [navshow , setnavshow] = useState<boolean>(false)
+  
   return (
-    <Flex w='100vw' h='100vh' overflow='hidden' fontFamily='Poppins , sans-serif' className="dashboard">
-    <Nav/>
-    <div className="addsection">
+    <Flex w='100vw' h='100vh' overflow='hidden' fontFamily='Poppins , sans-serif' className="dashboard bg-[#202029]" >
+    <Nav navshow={navshow} setnavshow={setnavshow}/>
+    <div className="base:w-[100%] md:w-[80%] bg-[#202029] text-white overflow-hidden h-[100vh] flex justify-start items-center flex-col select-none border-[1px] mt-[-1px] border-l-[#23232B]">
       <div className="head">
         <div className="">
         {windowSize < 810 && (

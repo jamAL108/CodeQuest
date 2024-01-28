@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { LogOut ,Menu } from "lucide-react";
 import { user } from "../../interface/interface";
 import { Text, Button, Box , Divider ,Flex , Show} from "@chakra-ui/react";
-import { dashboardNavProps } from '../../interface/interface'
 import Nav from '@/components/commonComponent/nav'
 const Settings: React.FC = () => {
   const [user, setuser] = useState<user | null>(null);
@@ -14,6 +13,8 @@ const Settings: React.FC = () => {
     const Data: string | null = localStorage.getItem("codeQuestUSER");
     const userdata: user | null = Data ? JSON.parse(Data) : null;
     setuser(userdata)
+    setuseredit(userdata)
+    console.log(userdata)
   },[])
 
 
@@ -29,9 +30,11 @@ const Settings: React.FC = () => {
     paddingLeft: "8px",
     filter: "brightness(1.5)",
   };
+
+  const [navshow , setnavshow] = useState<boolean>(false)
   return (
     <Flex  w='100vw' h='100vh' overflow='hidden' fontFamily='Poppins , sans-serif' className="dashboard">
-    <Nav/>
+    <Nav navshow={navshow} setnavshow={setnavshow} />
     <Flex w={{base:'100%',md:'80%'}} h='100vh' bg='#202029' color='white' borderLeft='1px solid #23232b' justify='flex-start' align='center' direction='column'  className="setting">
 
       <Box 
@@ -48,7 +51,7 @@ const Settings: React.FC = () => {
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                // navchange(true);
+                setnavshow(true)
               }}
             />
           </Show>
@@ -57,7 +60,7 @@ const Settings: React.FC = () => {
           </Text>
         </Flex>
         <button
-        className="bg-[#7299F2] hover:bg-[#6a8de1] text-[#202029] transition duration-500 ease-in-out hover:scale-[1.03] text-[0.83rem] gap-3 rounded-[4px] h-[38px] py-0 px-[5px] "
+        className="bg-[#7299F2] hover:bg-[#6a8de1] text-[#202029] transition duration-500 ease-in-out hover:scale-[1.03] text-[0.83rem] gap-3 rounded-[4px] font-[600] flex justify-center items-center h-[38px] py-[7px] px-[17px]"
           >
             Logout <LogOut size={17} />
           </button>
@@ -77,7 +80,7 @@ const Settings: React.FC = () => {
         >
           <Text fontSize="1.15rem" fontWeight={600} as="h2" >Your Details</Text>
           <button 
-          className="bg-[#7299F2] hover:bg-[#6a8de1] text-[#202029] transition duration-500 ease-in-out hover:scale-[1.03] text-[0.83rem] gap-3 rounded-[4px] h-[38px] py-0 px-[5px]">
+          className="bg-[#7299F2] hover:bg-[#6a8de1] text-pop  text-[#202029] transition duration-500 ease-in-out hover:scale-[1.03] text-[0.83rem] gap-3 rounded-[4px] font-[600] h-[38px] py-[7px] px-[17px]">
             Save Changes
           </button>
         </Box>
@@ -137,19 +140,11 @@ style={  useredit?.lastName !== user?.lastName
               />
 
             </Flex>
-
-            </Flex>
-
-
-
-          <Flex       
-          w='full' h={{base:'5.5rem',md:'5.5rem'}} gap={{base:"20px",md:'30px'}} flexWrap='wrap' justify='flex-start' align='center'  
-          gridRow={{base:"none",md:2}}
-            id="child">
-
             <Flex justify='center' h='full' w={{base:"46%",md:'270px'}} align='flex-start' direction='column' gap='7px'>
              <Text m={0}  fontSize='0.73rem' fontWeight={500} >Email</Text>
               <input
+              disabled={true}
+              className="opacity-[0.4]"
                 type="text"
                 style={
                   useredit?.email !== user?.email
@@ -164,6 +159,15 @@ style={  useredit?.lastName !== user?.lastName
                 }}
               />
             </Flex>
+
+            </Flex>
+
+
+
+          <Flex       
+          w='full' h={{base:'5.5rem',md:'5.5rem'}} gap={{base:"20px",md:'30px'}} flexWrap='wrap' justify='flex-start' align='center'  
+          gridRow={{base:"none",md:2}}
+            id="child">
 
             <Flex justify='center' h='full' w={{base:"46%",md:'270px'}}  align='flex-start' direction='column' gap='7px'>
               <Text m={0}  fontSize='0.73rem' fontWeight={500} >Password</Text>
@@ -182,34 +186,6 @@ style={  useredit?.lastName !== user?.lastName
                 }}
               />
             </Flex>
-
-            <Flex justify='center' h='full' w='270px' align='flex-start' direction='column' gap='7px'>
-              <Text m={0}  fontSize='0.73rem' fontWeight={500} >Confirm Password</Text>
-              <input
-                type="text"
-                style={
-                  useredit?.password !== user?.password
-                  ? {...inputStyles , border: "2px solid #6a8de1" }
-                  : {...inputStyles , border: "2px solid rgba(209, 203, 203, 0.3)" }
-                }
-                value={useredit?.password}
-                onChange={(e) => {
-                  if (useredit) {
-                    setuseredit({ ...useredit, password: e.target.value });
-                  }
-                }}
-              />
-            </Flex>
-
-          </Flex>
-
-
-          <Flex        
-          w='full'  marginTop={{base:"110px",md:"auto"}} h='5.5rem' gap={{base:"20px",md:'30px'}}   justify='flex-start' align='center'    
-          gridRow={{base:"none",md:3}}
-            id="child"
-            >
-
             <Flex h='full' w='270px' justify='center' align='flex-start' direction='column' gap='7px'>
               <Text m={0}  fontSize='0.73rem' fontWeight={500} >organization</Text>
               <input
@@ -247,8 +223,6 @@ style={  useredit?.lastName !== user?.lastName
             </Flex>
 
           </Flex>
-
-
           </Box>
         </Box>
     </Flex>
